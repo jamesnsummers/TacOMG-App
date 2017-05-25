@@ -24,6 +24,3 @@
 ---
 
 ##### Screenshot(s) (optional)
-
-
-

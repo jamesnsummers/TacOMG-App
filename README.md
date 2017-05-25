@@ -10,7 +10,7 @@ The objective of this project is to:
 * Demonstrate mastery of topics covered during this course so far.  
 * Build a polished, published website you can share in your portfolio.  
 
-You will be working **individually** for this first project. Show us what you've got!
+You will be working **in groups** for this first project. Show us what you've got!
 
 ## CORE REQUIREMENTS
 Make sure to do all of the following with your app.
@@ -19,7 +19,7 @@ Make sure to do all of the following with your app.
 * **RESTful Routes** Design your CRUD routes using the [REST](http://restfulrouting.com/mappings/resources) convention.
 * **AJAX** Leverage AJAX to fetch JSON data from the backend.
 * **jQuery** Use jQuery to add interactivity and render data on the client-side.  
-* **Templating** Render the JSON data on the frontend using handlebars templates.  
+* **Templating** Render the JSON data on the frontend using ES6 String literals or on the backend using EJS.  
 * **MongoDB** Persist at least two models to a Mongo Database. Use at least one one-to-many or many-to-many relationship between models. You can choose to reference or embed your data.  
 * **Git** 50+ commits. Commit early, commit often. Tell a story with your commits. Each message should give a clear idea what you changed. (And don't expose any secret keys/tokens on GitHub!)
 * **Code Style** Write professional-looking code. Follow the [Airbnb Javascript Styleguide](https://github.com/airbnb/javascript).
@@ -53,13 +53,13 @@ If you want to push yourself and learn something new, optionally consider doing 
 
 ## TIMELINE
 
-> DO NOT START CODING UNTIL YOUR PROJECT IS APPROVED. CONFIRM THAT YOU ARE APPROVED ON THIS SPREADSHEET: [PROJECT APPROVAL SPREADSHEET](https://docs.google.com/spreadsheets/d/1T3A_lZtaI7uZt3kkF2wZZ7sfjczOqB8dnax3BTJkvJk/edit?usp=sharing).
+> DO NOT START CODING UNTIL YOUR PROJECT IS APPROVED. CONFIRM THAT YOU ARE APPROVED ON THIS SPREADSHEET: [PROJECT APPROVAL SPREADSHEET](https://docs.google.com/a/generalassemb.ly/spreadsheets/d/1mk4DjD-O7BUzXlAMK9aeGXn5cWcTefx2icbzUyXcng4/edit?usp=sharing).
 
 
-* **Wednesday, April 6th by 3:00pm** - Present your app plan to your assigned instructor. Before you begin work on your project, the [planning deliverables](./planning.md) must be checked off with an instructor!
-* **Weekdays, April 7th-11th** - Standups @ 10:00am. Afternoon 1:1s with instructors.
-* **Monday, April 11th** - Feature Freeze! Deploy your code to Heroku, and start polishing existing features. Finalize your README.md and prepare for presentations.
-* **Tuesday, April 12th @ 10am** - Project due and presentations!
+* **Friday, May 26th by 3:00pm** - Present your app plan to your assigned instructor. Before you begin work on your project, the [planning deliverables](./planning.md) must be checked off with an instructor!
+* **Weekdays, May 29th to June 1st** - Standups @ 10:00am. Afternoon 1:1s with instructors.
+* **Thursday, June 1st 4:00pm** - Feature Freeze! Deploy your code to Heroku, and start polishing existing features. Finalize your README.md and prepare for presentations.
+* **Friday, June 2nd @ 9:30am** - Project due and presentations!
 
 ## WHAT WE ARE LOOKING FOR
 
@@ -93,7 +93,7 @@ We will hold 1:1s throughout the week. We will also do mini lessons on certain t
 
 ## Presentation Tips
 * Please zoom your browser window to 150%.
-* Please set your SublimeText font to at least 20.0 pixels.
+* Please set your Atom font to at least 20.0 pixels.
 * And speak up!
 
 ###HAPPY CODING :)
