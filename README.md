@@ -1,6 +1,6 @@
-# App Name
+# Taco App
 
-*Short explanation of the project (1-2 sentences) - what is the goal of the project and/or main functionality?*
+*Taco App allows users to create their ideal taco and populate a gallery of tacos. In this gallery, they can vote for their favorite tacos and see how many votes each taco has.*
 
 [Link to project hosted on Heroku]()
 
