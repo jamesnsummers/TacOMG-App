@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost/tacohmygod');
 
 // connect to db models
 var db = require('./models');
+var routes = require('./config/routes');
 
 // Middleware
 app.use( cookieParser() );
@@ -45,6 +46,8 @@ app.get('/api/tacos', function(req, res) {
     });
 });
 
+app.post('')
+
 // app.get('/', function(req, res){
 //   res.render('layout', {candies: req.body, user: req.user});
 // });
@@ -67,9 +70,9 @@ app.get('/api/tacos', function(req, res) {
 // });
 //
 // // Add static middleware
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 //
 //
-// app.use(routes);
+app.use(routes);
 
 app.listen(3000);
