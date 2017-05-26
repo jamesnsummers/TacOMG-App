@@ -7,9 +7,10 @@ var mongoose       = require('mongoose');
 var cookieParser   = require("cookie-parser");
 
 
-mongoose.connect('mongodb://localhost:27017/candies-app');
+mongoose.connect('mongodb://localhost/tacohmygod');
 
-var routes = require('./config/routes');
+// connect to db models
+var db = require('./models');
 
 // Middleware
 app.use( cookieParser() );
@@ -30,31 +31,45 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 
-app.get('/', function(req, res){
-  res.render('layout', {candies: req.body, user: req.user});
+app.get('/api/users', function(req, res) {
+// find all users in db
+    db.User.find({}, function(err, allUsers) {
+        res.json({ User: allUsers });
+    });
 });
 
-// Setting up the Passport Strategies
-require("./config/passport")(passport)
-
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email'} ));
-
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', {
-    successRedirect: '/',
-    failureRedirect: '/'
-  })
-);
-
-app.get("/logout", function(req, res){
-  req.logout();
-  res.redirect("/")
+app.get('/api/tacos', function(req, res) {
+// find all tacos in db
+    db.Taco.find({}, function(err, allTacos) {
+        res.json({ Taco: allTacos });
+    });
 });
 
-// Add static middleware
-app.use(express.static(__dirname + '/public'));
-
-
-app.use(routes);
+// app.get('/', function(req, res){
+//   res.render('layout', {candies: req.body, user: req.user});
+// });
+//
+// // Setting up the Passport Strategies
+// require("./config/passport")(passport)
+//
+// app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email'} ));
+//
+// app.get('/auth/facebook/callback',
+//   passport.authenticate('facebook', {
+//     successRedirect: '/',
+//     failureRedirect: '/'
+//   })
+// );
+//
+// app.get("/logout", function(req, res){
+//   req.logout();
+//   res.redirect("/")
+// });
+//
+// // Add static middleware
+// app.use(express.static(__dirname + '/public'));
+//
+//
+// app.use(routes);
 
 app.listen(3000);

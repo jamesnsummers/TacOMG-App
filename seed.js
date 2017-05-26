@@ -1,6 +1,6 @@
 var db = require('./models');
 
-var User = [
+var userList = [
   {
     firstName: 'James',
     email: 'jamesnsummers@gmail.com'
@@ -12,10 +12,10 @@ var User = [
   {
     firstName: 'Benjamin',
     email: 'benjamin.tovar510@gmail.com'
-  },
+  }
 ];
 
-var Taco = [
+var tacoList = [
   {
     tortilla: 'Flour',
     eggs: true,
@@ -54,13 +54,21 @@ var Taco = [
   }
 ];
 
-db.Drone.remove({}, function(err, removedEverything){
+db.Taco.remove({}, function(err, removedEverything){
   if(err){return console.log("ERR: ", err);}
 
- db.Drone.create(droneList, function(err, lottaDrones){
+ db.Taco.create(tacoList, function(err, allTacos){
     if(err){return console.log("ERR: ", err);}
-    console.log(lottaDrones);
-    process.exit(1);
-  });
+    console.log(allTacos);
 
+    db.User.remove({}, function(err, removedEverything){
+      if(err){return console.log("ERR: ", err);}
+
+     db.User.create(userList, function(err, allUsers){
+        if(err){return console.log("ERR: ", err);}
+        console.log(allUsers);
+        process.exit(1);
+      });
+    });
+  });
 });
