@@ -6,7 +6,7 @@
 
 ## Technologies Used
 
-*What technologies did you use to develop this project? (bullet points)*
+*HTML, CSS, Bootstrap, Javascript, JQuery, AJAX, Express, MongooseDB, .ejs, Git, Github, Heroku, oauth, *
 
 
 
@@ -19,7 +19,15 @@
 
 ## Planned Features
 
-*What changes would you make to your project if you continue to work on it? (bullet points)*
+*-Land on homepage
+-Create account using fb
+-Create taco that is ideal to you
+-Submit taco idea
+-Take you to the taco gallery
+-Vote on you favorite tacos (that aren’t yours).
+-Have the ability to update or delete a taco that you created.
+-Remove the 1 least favorite taco from gallery that doesn’t get voted on every hour.
+-Logout *
 
 ---
 
