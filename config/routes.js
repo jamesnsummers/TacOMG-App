@@ -21,21 +21,21 @@ router.route('/tacos')
 
   //GET all candies
   .get(tacosController.getAll)
-
+  
   //POST a new blob
   .post(tacosController.createTaco);
 
 
-router.route('/tacos/:id')
-
-  // GET return specific candy
-  .get(tacosController.getTaco)
-
-  // PATCH update existing candy
-  .patch(tacosController.voteTaco)
-
-  // DELETE remove specific candy from DB
-  .delete(isAuthenticated, tacosController.removeTaco);
+// router.route('/tacos/:id')
+//
+//   // GET return specific candy
+//   .get(tacosController.getTaco)
+//
+//   // PATCH update existing candy
+//   .patch(tacosController.voteTaco)
+//
+//   // DELETE remove specific candy from DB
+//   .delete(isAuthenticated, tacosController.removeTaco);
 
   // router.route('/auth/facebook').get( usersController.login);
   //

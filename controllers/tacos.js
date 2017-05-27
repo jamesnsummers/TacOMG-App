@@ -1,4 +1,4 @@
-var db = require('./models');
+var db = require('../models');
 
 // GET
 function getAll(request, response) {
@@ -10,21 +10,26 @@ function getAll(request, response) {
   });
 }
 
-// // POST
-// function createCandy(request, response) {
-//   console.log('in POST');
-//   console.log('body:',request.body);
-//   var candy = new Candy();
-//
-//   candy.name = request.body.name;
-//   candy.color = request.body.color;
-//
-//   candy.save(function(error) {
-//     if(error) response.json({messsage: 'Could not ceate candy b/c:' + error});
-//
-//     response.redirect('/candies');
-//   });
-// }
+// POST
+function createTaco(request, response) {
+  console.log('in POST');
+  console.log('body:',request.body);
+  var taco = new db.Taco();
+
+  taco.tortilla = request.body.tortilla;
+  taco.eggs = request.body.eggs;
+  taco.meat = request.body.meat;
+  taco.salsa = request.body.salsa;
+  taco.cheese = request.body.cheese;
+  taco.beans = request.body.beans;
+  taco.potato = request.body.potato;
+
+  taco.save(function(error) {
+    if(error) response.json({messsage: 'Could not ceate candy b/c:' + error});
+
+    response.redirect('/tacos');
+  });
+}
 //
 // // GET
 // function getCandy(request, response) {
@@ -66,8 +71,5 @@ function getAll(request, response) {
 
 module.exports = {
   getAll: getAll,
-  createCandy: createCandy,
-  getCandy: getCandy,
-  updateCandy: updateCandy,
-  removeCandy: removeCandy
+  createTaco: createTaco
 }
