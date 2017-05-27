@@ -30,18 +30,18 @@ function createTaco(request, response) {
     response.redirect('/tacos');
   });
 }
-//
-// // GET
-// function getCandy(request, response) {
-//   var id = request.params.id;
-//
-//   Candy.findById({_id: id}, function(error, candy) {
-//     if(error) response.json({message: 'Could not find candy b/c:' + error});
-//
-//     response.json({candy: candy});
-//   });
-// }
-//
+
+// GET
+function getTaco(request, response) {
+  var id = request.params.id;
+
+  db.Taco.findById({_id: id}, function(error, taco) {
+    if(error) response.json({message: 'Could not find taco b/c:' + error});
+
+    response.json({taco: taco});
+  });
+}
+
 // function updateCandy(request, response) {
 //   var id = request.params.id;
 //
@@ -59,17 +59,19 @@ function createTaco(request, response) {
 //   });
 // }
 //
-// function removeCandy(request, response) {
-//   var id = request.params.id;
-//
-//   Candy.remove({_id: id}, function(error) {
-//     if(error) response.json({message: 'Could not delete candy b/c:' + error});
-//
-//     response.json({message: 'Candy successfully deleted'});
-//   });
-// }
+function removeTaco(request, response) {
+  var id = request.params.id;
+
+  db.Taco.remove({_id: id}, function(error) {
+    if(error) response.json({message: 'Could not delete taco b/c:' + error});
+
+    response.json({message: 'Taco successfully deleted'});
+  });
+}
 
 module.exports = {
   getAll: getAll,
-  createTaco: createTaco
+  createTaco: createTaco,
+  getTaco: getTaco,
+  removeTaco: removeTaco
 }
