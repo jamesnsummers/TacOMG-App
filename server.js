@@ -48,9 +48,11 @@ app.get('/api/tacos', function(req, res) {
 
 app.post('')
 
-// app.get('/', function(req, res){
-//   res.render('layout', {candies: req.body, user: req.user});
-// });
+app.get('/tacos', function(req, res){
+  db.Taco.find({}, function(err, allTacos) {
+      res.render('layout', {tacos: allTacos});
+  });
+});
 //
 // // Setting up the Passport Strategies
 // require("./config/passport")(passport)

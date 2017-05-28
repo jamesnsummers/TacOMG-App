@@ -1,0 +1,26 @@
+body {
+	font-family: 'Raleway', sans-serif;
+	background-image: url('/images/taco-1.jpg');
+}
+
+h1, h3 {
+	text-align: center;
+}
+
+.container {
+  color: #FF7F59;
+  font-family: 'Istok Web', sans-serif;
+  background-color: #FFDED0;
+  border-radius: 20px;
+}
+
+.col-md-6{
+  border: 1px dashed #8E959E;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+ul
+{
+    list-style-type: none;
+}

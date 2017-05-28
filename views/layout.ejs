@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tacohmygod</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/main.css" /></head>
+<link href="https://fonts.googleapis.com/css?family=Istok+Web|News+Cycle" rel="stylesheet">
+<body>
+	<h1>
+		<a target="_blank" href="https://www.youtube.com/watch?v=Ov8mAjlDhd8">TACOHMYGOD</a>
+	</h1>
+  <hr>
+	<div class="container">
+
+
+	<ul>
+		<% for(var i=0; i< tacos.length; i++) {  %>
+
+        <li>
+          <div class="col-md-6 col-md">
+					<h4>
+            <b>ID : </b> <%= tacos[i].id %><br>
+            <b>Tortilla : </b> <%= tacos[i].tortilla %><br>
+					  <b>Eggs : </b> <%= tacos[i].eggs %><br>
+            <b>Meat : </b> <%= tacos[i].meat %><br>
+            <b>Salsa : </b> <%= tacos[i].salsa %><br>
+            <b>Cheese : </b> <%= tacos[i].cheese %><br>
+            <b>Beans : </b> <%= tacos[i].beans %><br>
+            <b>Potato : </b> <%= tacos[i].potato %><br>
+          </h4>
+          </div>
+				</li>
+		<% } %>
+
+	</ul>
+
+
+	</div>
+
+	<hr>
+
+	<div class="container">
+
+	</div>
+
+</body>
+</html>
