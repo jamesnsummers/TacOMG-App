@@ -48,7 +48,7 @@ app.get('/api/tacos', function(req, res) {
 
 app.post('')
 
-app.get('/tacos', function(req, res){
+app.get('/', function(req, res){
   db.Taco.find({}, function(err, allTacos) {
       res.render('layout', {tacos: allTacos});
   });
