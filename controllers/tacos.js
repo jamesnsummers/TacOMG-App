@@ -20,7 +20,7 @@ function createTaco(request, response) {
   taco.cheese = request.body.cheese;
   taco.beans = request.body.beans;
   taco.potato = request.body.potato;
-  taco.votes = request.body.votes;
+  taco.voteCount = request.body.voteCount;
 
   taco.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate taco b/c:' + error});
@@ -47,7 +47,7 @@ function voteTaco(request, response) {
   db.Taco.findById({_id: id}, function(error, taco) {
     if(error) response.json({message: 'Could not find taco b/c:' + error});
 
-    if(request.body.votes) taco.votes = request.body.votes;
+    if(request.body.voteCount) taco.voteCount = request.body.voteCount;
 
     taco.save(function(error) {
       if(error) response.json({messsage: 'Could not update taco b/c:' + error});

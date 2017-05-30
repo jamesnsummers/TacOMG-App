@@ -3,3 +3,4 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tacohmygod");
 
 module.exports.Taco = require("./Taco.js");
 module.exports.User = require("./User.js");
+module.exports.Vote = require("./Vote.js");
