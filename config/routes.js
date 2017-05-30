@@ -19,8 +19,8 @@ var usersController = require('../controllers/users');
 
 router.route('/tacos')
 
-  //GET all candies
-  .get(tacosController.getAll)
+  //GET all tacos
+  .get(tacosController.getAllTacos)
 
   //POST a new blob
   .post(tacosController.createTaco);
@@ -34,10 +34,30 @@ router.route('/tacos/:id')
   // PATCH update(vote) existing taco
   .patch(tacosController.voteTaco)
 
-  // DELETE remove specific candy from DB
+  // DELETE remove specific taco from DB
   .delete(tacosController.removeTaco);
 
-  // router.route('/auth/facebook').get( usersController.login);
+router.route('/users')
+
+  //GET all tacos
+  .get(usersController.getAllUsers)
+
+  //POST a new blob
+  .post(usersController.createUser);
+
+
+router.route('/users/:id')
+
+  // GET return specific taco
+  .get(usersController.getUser)
+
+  // // PATCH update(vote) existing taco
+  // .patch(usersController.voteUser)
+
+  // DELETE remove specific taco from DB
+  .delete(usersController.removeUser);
+
+  // router.route('/auth/facebook').get(usersController.login);
   //
   //
   // router.route('/auth/facebook/callback').get(usersController.getCallback);

@@ -49,12 +49,12 @@ app.get('/api/tacos', function(req, res) {
 app.post('')
 
 app.get('/', function(req, res){
-  db.Taco.find({}, function(err, allTacos) {
-      res.render('layout', {tacos: allTacos});
+  db.Taco.find({}, function(err, succ) {
+      res.render('layout', succ);
   });
 });
-//
-// // Setting up the Passport Strategies
+
+// Setting up the Passport Strategies
 // require("./config/passport")(passport)
 //
 // app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email'} ));
@@ -70,7 +70,7 @@ app.get('/', function(req, res){
 //   req.logout();
 //   res.redirect("/")
 // });
-//
+
 // // Add static middleware
 app.use(express.static(__dirname + '/public'));
 //

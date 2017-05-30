@@ -1,0 +1,15 @@
+<ul>
+  <% for(var i=0; i< users.length; i++) {  %>
+
+      <li>
+        <div class="col-md-6 col-md">
+        <h4>
+          <b>ID : </b> <%= users[i].id %><br>
+          <b>Name : </b> <%= users[i].firstName %><br>
+          <b>Email : </b> <%= users[i].email %><br>
+        </h4>
+        </div>
+      </li>
+  <% } %>
+
+</ul>

@@ -1,11 +1,11 @@
 var db = require('../models');
 
 // GET
-function getAll(request, response) {
+function getAllTacos(request, response) {
   db.Taco.find(function(error, allTacos) {
     if(error) response.json({message: 'Could not find any tacos'});
-    //response.json({Taco: allTacos});
-    response.render('layout', {Taco: allTacos});
+    response.json({Taco: allTacos});
+    // response.render('layout', {tacos: allTacos});
   });
 }
 
@@ -24,7 +24,7 @@ function createTaco(request, response) {
   taco.potato = request.body.potato;
 
   taco.save(function(error) {
-    if(error) response.json({messsage: 'Could not ceate candy b/c:' + error});
+    if(error) response.json({messsage: 'Could not ceate taco b/c:' + error});
 
     response.redirect('/tacos');
   });
@@ -48,8 +48,7 @@ function voteTaco(request, response) {
   db.Taco.findById({_id: id}, function(error, taco) {
     if(error) response.json({message: 'Could not find taco b/c:' + error});
 
-    if(request.body.tortilla) taco.tortilla = request.body.tortilla;
-    if(request.body.meat) taco.meat = request.body.meat;
+    if(request.body.id) taco.id = request.body.id;
 
     taco.save(function(error) {
       if(error) response.json({messsage: 'Could not update taco b/c:' + error});
@@ -70,7 +69,7 @@ function removeTaco(request, response) {
 }
 
 module.exports = {
-  getAll: getAll,
+  getAllTacos: getAllTacos,
   createTaco: createTaco,
   getTaco: getTaco,
   voteTaco: voteTaco,
