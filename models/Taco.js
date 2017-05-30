@@ -1,5 +1,11 @@
 var mongoose = require('mongoose');
 
+// var Vote = require('./vote');
+
+// var VoteSchema = mongoose.Schema({
+//   vote: Number
+// });
+
 var TacoSchema = mongoose.Schema({
   tortilla: String,
   eggs: Boolean,
@@ -7,7 +13,8 @@ var TacoSchema = mongoose.Schema({
   salsa: Boolean,
   cheese: Boolean,
   beans: String,
-  potato: Boolean
+  potato: Boolean,
+  votes: Number
 });
 
 module.exports = mongoose.model('Taco', TacoSchema);

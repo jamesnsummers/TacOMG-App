@@ -39,22 +39,22 @@ router.route('/tacos/:id')
 
 router.route('/users')
 
-  //GET all tacos
+  //GET all users
   .get(usersController.getAllUsers)
 
-  //POST a new blob
+  //POST a new user
   .post(usersController.createUser);
 
 
 router.route('/users/:id')
 
-  // GET return specific taco
+  // GET return specific user
   .get(usersController.getUser)
 
-  // // PATCH update(vote) existing taco
+  // // PATCH update(vote) existing user
   // .patch(usersController.voteUser)
 
-  // DELETE remove specific taco from DB
+  // DELETE remove specific user from DB
   .delete(usersController.removeUser);
 
   // router.route('/auth/facebook').get(usersController.login);

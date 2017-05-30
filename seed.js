@@ -23,7 +23,8 @@ var tacoList = [
     salsa: true,
     cheese: true,
     beans: 'Black',
-    potato: false
+    potato: false,
+    votes: 1
   },
   {
     tortilla: 'Corn',
@@ -32,7 +33,8 @@ var tacoList = [
     salsa: true,
     cheese: true,
     beans: '',
-    potato: false
+    potato: false,
+    votes: 1
   },
   {
     tortilla: 'Flour',
@@ -41,7 +43,8 @@ var tacoList = [
     salsa: true,
     cheese: true,
     beans: 'Black',
-    potato: true
+    potato: true,
+    votes: 1
   },
   {
     tortilla: 'Wheat',
@@ -50,7 +53,8 @@ var tacoList = [
     salsa: true,
     cheese: false,
     beans: 'Refried',
-    potato: true
+    potato: true,
+    votes: 1
   }
 ];
 

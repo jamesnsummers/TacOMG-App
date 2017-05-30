@@ -10,8 +10,6 @@ function getAllUsers(request, response) {
 
 // POST
 function createUser(request, response) {
-  console.log('in POST');
-  console.log('body:',request.body);
   var user = new db.User();
 
   user.firstName = request.body.firstName;
