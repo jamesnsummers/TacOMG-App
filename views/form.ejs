@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Chango|Chelsea+Market|Knewave|Luckiest+Guy|Monoton|Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../stylesheets/main.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+
+      $('.dropdown-toggle').dropdown()
+
+    });
+
+    </script>
+    <meta charset="utf-8">
+    <title>tacoMyGod</title>
+  </head>
+  <header>
+    <nav class="navbar navbar-default" id="navbar">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a href="http://imgur.com/UQNynJ1"><img src="http://i.imgur.com/UQNynJ1.png" title="source: imgur.com" /></a> <a class="navbar-brand" href="#" id="navbar-brand">tacoMyGod</a>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right" id="nav-right">
+            <li><a href="#" id="log-out">log out</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header>
+  <body>
+    <div class="container text-center">
+      <div class="row">
+        <h2><b>create your breakfast taco</b></h2>
+      </div>
+    </div>
+      <fieldset>
+        <form method="POST" action="/tacos">
+          <div class="container text-center center-block">
+            <div class="row">
+              <div class="col-md-6"><p><b>tortilla</b></p></div>
+              <div class="col-md-6 btn-group">
+                <button name="tortilla" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> tortilla type <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">flour</a></li>
+                    <li><a href="#">corn</a></li>
+                    <li><a href="#">wheat</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center center-block"><hr></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 text-center"><p><b>eggs</b></p></div>
+              <div class="col-md-6 btn-group">
+                <label class="switch">
+                  <input name="eggs" type="checkbox" id="eggs">
+                  <div class="slider round" id="eggs-slider"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center center-block"><hr></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 text-center"><p><b>protein</b></p></div>
+              <div class="col-md-6 btn-group">
+                <button name="meat" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">protein type<span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">bacon</a></li>
+                    <li><a href="#">chorizo</a></li>
+                    <li><a href="#">sausage</a></li>
+                    <li><a href="#">soyrizo</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center center-block"><hr></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 text-center"><p><b>potatoes</b></p></div>
+              <div class="col-md-6 btn-group">
+                <label class="switch">
+                  <input name="potato" type="checkbox" id="potatoes">
+                  <div class="slider round" id="potatoes-slider"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center center-block"><hr></div>
+          <div class="container text-center center-block">
+            <div class="row">
+              <div class="col-md-6"><p><b>beans</b></p></div>
+              <div class="col-md-6 btn-group">
+                <button name="beans" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> bean type <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">pinto</a></li>
+                    <li><a href="#">black</a></li>
+                    <li><a href="#">refried</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center center-block"><hr></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 text-center"><p><b>cheese</b></p></div>
+              <div class="col-md-6 btn-group">
+                <label class="switch">
+                  <input name="cheese" type="checkbox" id="cheese">
+                  <div class="slider round" id="cheese-slider"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center center-block"><hr></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 text-center"><p><b>salsa</b></p></div>
+              <div class="col-md-6 btn-group">
+                <label class="switch">
+                  <input name="salsa" type="checkbox" id="salsa">
+                  <div class="slider round" id="salsa-slider"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="user" value="<%= user ? user : '' %>" >
+          <div class="container text-center">
+            <input class="btn btn-primary" type="submit" value="submit taco!">
+          </div>
+
+        </form>
+      </fieldset>
+  </body>
+</html>
