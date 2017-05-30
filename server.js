@@ -46,11 +46,11 @@ app.get('/api/tacos', function(req, res) {
     });
 });
 
-app.post('')
+// app.post('')
 
 app.get('/', function(req, res){
   db.Taco.find({}, function(err, succ) {
-      res.render('layout', succ);
+      res.render('layout', {succ: succ});
   });
 });
 
@@ -77,9 +77,9 @@ app.use(express.static(__dirname + '/public'));
 //
 app.use(routes);
 
-app.get('/form', function (req, res){
-  res.render('form.ejs', { user: null });
-})
+// app.get('/form', function (req, res){
+//   res.render('form.ejs', { user: null });
+// });
 
 app.listen(process.env.PORT || 3000, function () {
   console.log('Express server is up and running on http://localhost:3000/');
