@@ -7,7 +7,7 @@ var mongoose       = require('mongoose');
 var cookieParser   = require("cookie-parser");
 
 
-mongoose.connect('mongodb://localhost/tacohmygod');
+// mongoose.connect('mongodb://localhost/tacohmygod');
 
 // connect to db models
 var db = require('./models');
