@@ -4,8 +4,6 @@ var db = require('../models');
 function getAll(request, response) {
   db.Taco.find(function(error, allTacos) {
     if(error) response.json({message: 'Could not find any tacos'});
-
-    //response.json({message: candies});
     //response.json({Taco: allTacos});
     response.render('layout', {Taco: allTacos});
   });
@@ -43,23 +41,24 @@ function getTaco(request, response) {
   });
 }
 
-// function updateCandy(request, response) {
-//   var id = request.params.id;
-//
-//   Candy.findById({_id: id}, function(error, candy) {
-//     if(error) response.json({message: 'Could not find candy b/c:' + error});
-//
-//     if(request.body.name) candy.name = request.body.name;
-//     if(request.body.color) candy.color = request.body.color;
-//
-//     candy.save(function(error) {
-//       if(error) response.json({messsage: 'Could not update candy b/c:' + error});
-//
-//       response.json({message: 'Candy successfully updated'});
-//     });
-//   });
-// }
-//
+//UPDATE
+function voteTaco(request, response) {
+  var id = request.params.id;
+
+  db.Taco.findById({_id: id}, function(error, taco) {
+    if(error) response.json({message: 'Could not find taco b/c:' + error});
+
+    if(request.body.tortilla) taco.tortilla = request.body.tortilla;
+    if(request.body.meat) taco.meat = request.body.meat;
+
+    taco.save(function(error) {
+      if(error) response.json({messsage: 'Could not update taco b/c:' + error});
+
+      response.json({message: 'Taco successfully updated'});
+    });
+  });
+}
+
 function removeTaco(request, response) {
   var id = request.params.id;
 
@@ -74,5 +73,6 @@ module.exports = {
   getAll: getAll,
   createTaco: createTaco,
   getTaco: getTaco,
+  voteTaco: voteTaco,
   removeTaco: removeTaco
 }

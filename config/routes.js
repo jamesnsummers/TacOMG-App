@@ -31,8 +31,8 @@ router.route('/tacos/:id')
   // GET return specific taco
   .get(tacosController.getTaco)
 
-  // // PATCH update(vote) existing taco
-  // .patch(tacosController.voteTaco)
+  // PATCH update(vote) existing taco
+  .patch(tacosController.voteTaco)
 
   // DELETE remove specific candy from DB
   .delete(tacosController.removeTaco);
