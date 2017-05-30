@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/tacohmygod");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tacohmygod");
 
-module.exports.Taco = require("./taco.js");
-module.exports.User = require("./user.js");
+module.exports.Taco = require("./Taco.js");
+module.exports.User = require("./User.js");

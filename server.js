@@ -7,7 +7,7 @@ var mongoose       = require('mongoose');
 var cookieParser   = require("cookie-parser");
 
 
-mongoose.connect('mongodb://localhost/tacohmygod');
+// mongoose.connect('mongodb://localhost/tacohmygod');
 
 // connect to db models
 var db = require('./models');
@@ -48,9 +48,11 @@ app.get('/api/tacos', function(req, res) {
 
 app.post('')
 
-// app.get('/', function(req, res){
-//   res.render('layout', {candies: req.body, user: req.user});
-// });
+app.get('/', function(req, res){
+  db.Taco.find({}, function(err, allTacos) {
+      res.render('layout', {tacos: allTacos});
+  });
+});
 //
 // // Setting up the Passport Strategies
 // require("./config/passport")(passport)

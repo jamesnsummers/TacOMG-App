@@ -6,7 +6,8 @@ function getAll(request, response) {
     if(error) response.json({message: 'Could not find any tacos'});
 
     //response.json({message: candies});
-    response.json({Taco: allTacos});
+    //response.json({Taco: allTacos});
+    response.render('layout', {Taco: allTacos});
   });
 }
 
