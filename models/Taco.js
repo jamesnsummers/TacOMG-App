@@ -1,7 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var User = require('./User');
 
 var TacoSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   tortilla: String,
   eggs: Boolean,
   meat: String,

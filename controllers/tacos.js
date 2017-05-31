@@ -1,11 +1,15 @@
 var db = require('../models');
+var passport       = require('passport');
 
+// Setting up the Passport Strategies
+require("../config/passport")(passport)
 // GET
 function getAllTacos(request, response) {
   db.Taco.find(function(error, allTacos) {
     if(error) response.json({message: 'Could not find any tacos'});
     // response.json({Taco: allTacos});
-    response.render('partials/tacos/tacos', {tacos: allTacos});
+    // require any and all passport junk to be able to pass in req.user into your ejs json object
+    response.render('partials/tacos/tacos', {tacos: allTacos, user: request.user});
   });
 }
 
@@ -13,6 +17,7 @@ function getAllTacos(request, response) {
 function createTaco(request, response) {
   var taco = new db.Taco();
 
+  taco.user = request.body.user;
   taco.tortilla = request.body.tortilla;
   taco.eggs = request.body.eggs;
   taco.meat = request.body.meat;

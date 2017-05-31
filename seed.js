@@ -2,16 +2,31 @@ var db = require('./models');
 
 var userList = [
   {
-    firstName: 'James',
-    email: 'jamesnsummers@gmail.com'
+    fb: {
+      id: '345834501289359',
+      access_token: '42305928350ifnowif',
+      firstName: 'James',
+      lastName: 'Summers',
+      email: 'jamesnsummers@gmail.com'
+    }
   },
   {
-    firstName: 'Jared',
-    email: 'jjaredwatson@gmail.com'
+    fb: {
+      id: '20u9204[infqp0i]',
+      access_token: '3510432578wdfjns',
+      firstName: 'Jared',
+      lastName: 'Watson',
+      email: 'jjaredwatson@gmail.com'
+    }
   },
   {
-    firstName: 'Benjamin',
-    email: 'benjamin.tovar510@gmail.com'
+    fb: {
+      id: '2038pfununfdwf',
+      access_token: '42305928234034ljaekrlajnf350ifnowif',
+      firstName: 'Benjamin',
+      lastName: 'Tovar',
+      email: 'benjamin.tovar510@gmail.com'
+    }
   }
 ];
 

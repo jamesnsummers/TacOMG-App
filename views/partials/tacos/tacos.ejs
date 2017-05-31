@@ -1,19 +1,66 @@
-<ul>
-  <% for(var i=0; i< tacos.length; i++) {  %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TACOHMYGOD</title>
 
-      <li>
-        <div class="col-md-6 col-md">
-        <h4>
-          <b>ID : </b> <%= tacos[i].id %><br>
-          <b>Tortilla : </b> <%= tacos[i].tortilla %><br>
-          <b>Eggs : </b> <%= tacos[i].eggs %><br>
-          <b>Meat : </b> <%= tacos[i].meat %><br>
-          <b>Salsa : </b> <%= tacos[i].salsa %><br>
-          <b>Cheese : </b> <%= tacos[i].cheese %><br>
-          <b>Beans : </b> <%= tacos[i].beans %><br>
-          <b>Potato : </b> <%= tacos[i].potato %><br>
-        </h4>
-        </div>
-      </li>
-  <% } %>
-</ul>
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css" /></head>
+	<link href="https://fonts.googleapis.com/css?family=Istok+Web|News+Cycle" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Chango|Chelsea+Market|Knewave|Luckiest+Guy|Monoton|Press+Start+2P" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="../stylesheets/main.css" rel="stylesheet">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function() {
+		$('.dropdown-toggle').dropdown()
+	});
+
+	</script>
+
+	<meta charset="utf-8">
+</head>
+
+<body>
+  <ul>
+    <% for(var i=0; i< tacos.length; i++) {  %>
+        <li>
+          <div class="col-md-6 col-md card">
+          <h4>
+            <b><%= tacos[i].user %>'s Taco: </b>
+            <b>ID : </b> <%= tacos[i].id %><br>
+            <b>Tortilla : </b> <%= tacos[i].tortilla %><br>
+            <b>Eggs : </b> <%= tacos[i].eggs %><br>
+            <b>Meat : </b> <%= tacos[i].meat %><br>
+            <b>Salsa : </b> <%= tacos[i].salsa %><br>
+            <b>Cheese : </b> <%= tacos[i].cheese %><br>
+            <b>Beans : </b> <%= tacos[i].beans %><br>
+            <b>Potato : </b> <%= tacos[i].potato %><br>
+          </h4>
+
+          <p class="count">0</p>
+          <p class="buttonPlus">+</p>
+
+          </div>
+        </li>
+
+    <% } %>
+    <script  type="text/javascript">
+      var counter = 0;
+      console.log("I am listening");
+      $(".card").on('click', '.buttonPlus', function(e){
+        //incrementCount();
+        //counter++;
+        var count = $(this).prev().text()
+        $(this).prev().text(++count);
+        // make your vote creation ajax call RIGHT HERE
+        //you'll need the tacoid and the userid
+        // use a data-userid= <%= user._id %>
+        // .data('userid') => userId that you embed there
+      });
+
+    </script>
+  </ul>
+</body>
