@@ -7,15 +7,15 @@ var tacosController = require('../controllers/tacos');
 var usersController = require('../controllers/users');
 
 
-// var isAuthenticated = function (req, res, next) {
-//   // if user is authenticated in the session, call the next() to call the next request handler
-//   // Passport adds this method to request object. A middleware is allowed to add properties to
-//   // request and response objects
-//   if (req.isAuthenticated())
-//     return next();
-//   // if the user is not authenticated then redirect him to the login page
-//   res.redirect('/');
-// }
+var isAuthenticated = function (req, res, next) {
+  // if user is authenticated in the session, call the next() to call the next request handler
+  // Passport adds this method to request object. A middleware is allowed to add properties to
+  // request and response objects
+  if (req.isAuthenticated())
+    return next();
+  // if the user is not authenticated then redirect him to the login page
+  res.redirect('/');
+}
 
 router.route('/tacos')
 
@@ -32,7 +32,7 @@ router.route('/tacos/:id')
   .get(tacosController.getTaco)
 
   // PATCH update(vote) existing taco
-  .patch(tacosController.voteTaco)
+  // .patch(tacosController.voteTaco)
 
   // DELETE remove specific taco from DB
   .delete(tacosController.removeTaco);
@@ -57,11 +57,11 @@ router.route('/users/:id')
   // DELETE remove specific user from DB
   .delete(usersController.removeUser);
 
-  // router.route('/auth/facebook').get(usersController.login);
-  //
-  //
-  // router.route('/auth/facebook/callback').get(usersController.getCallback);
-  //
-  // router.route('/logout').get(usersController.logout);
+  router.route('/auth/facebook').get(usersController.login);
+
+
+  router.route('/auth/facebook/callback').get(usersController.getCallback);
+
+  router.route('/logout').get(usersController.logout);
 
 module.exports = router;

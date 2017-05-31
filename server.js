@@ -49,37 +49,31 @@ app.get('/api/tacos', function(req, res) {
 // app.post('')
 
 app.get('/', function(req, res){
-  db.Taco.find({}, function(err, succ) {
-      res.render('layout', {succ: succ});
-  });
+  res.render('layout', {tacos: req.body, user: req.user});
 });
 
 // Setting up the Passport Strategies
-// require("./config/passport")(passport)
-//
-// app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email'} ));
-//
-// app.get('/auth/facebook/callback',
-//   passport.authenticate('facebook', {
-//     successRedirect: '/',
-//     failureRedirect: '/'
-//   })
-// );
-//
-// app.get("/logout", function(req, res){
-//   req.logout();
-//   res.redirect("/")
-// });
+require("./config/passport")(passport)
+
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email'} ));
+
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', {
+    successRedirect: '/',
+    failureRedirect: '/'
+  })
+);
+
+app.get("/logout", function(req, res){
+  req.logout();
+  res.redirect("/")
+});
 
 // // Add static middleware
 app.use(express.static(__dirname + '/public'));
 //
 //
 app.use(routes);
-
-// app.get('/form', function (req, res){
-//   res.render('form.ejs', { user: null });
-// });
 
 app.listen(process.env.PORT || 3000, function () {
   console.log('Express server is up and running on http://localhost:3000/');

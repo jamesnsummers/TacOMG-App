@@ -20,7 +20,6 @@ function createTaco(request, response) {
   taco.cheese = request.body.cheese;
   taco.beans = request.body.beans;
   taco.potato = request.body.potato;
-  taco.voteCount = request.body.voteCount;
 
   taco.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate taco b/c:' + error});
@@ -40,22 +39,22 @@ function getTaco(request, response) {
   });
 }
 
-//UPDATE
-function voteTaco(request, response) {
-  var id = request.params.id;
-
-  db.Taco.findById({_id: id}, function(error, taco) {
-    if(error) response.json({message: 'Could not find taco b/c:' + error});
-
-    if(request.body.voteCount) taco.voteCount = request.body.voteCount;
-
-    taco.save(function(error) {
-      if(error) response.json({messsage: 'Could not update taco b/c:' + error});
-
-      response.json({message: 'Taco successfully updated'});
-    });
-  });
-}
+// //UPDATE
+// function voteTaco(request, response) {
+//   var id = request.params.id;
+//
+//   db.Taco.findById({_id: id}, function(error, taco) {
+//     if(error) response.json({message: 'Could not find taco b/c:' + error});
+//
+//     if(request.body.voteCount) taco.voteCount = request.body.voteCount;
+//
+//     taco.save(function(error) {
+//       if(error) response.json({messsage: 'Could not update taco b/c:' + error});
+//
+//       response.json({message: 'Taco successfully updated'});
+//     });
+//   });
+// }
 
 function removeTaco(request, response) {
   var id = request.params.id;
@@ -71,6 +70,6 @@ module.exports = {
   getAllTacos: getAllTacos,
   createTaco: createTaco,
   getTaco: getTaco,
-  voteTaco: voteTaco,
+  // voteTaco: voteTaco,
   removeTaco: removeTaco
 }

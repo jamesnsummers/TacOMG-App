@@ -1,5 +1,24 @@
 var db = require('../models');
 
+function login(request, response){
+  var loginStrategy = passport.authenticate('facebook');
+  return loginStrategy(request, response)
+}
+
+function getCallback(request, response){
+  var callback = passport.authenticate('facebook', {
+    successRedirect : '/candies',
+    failureRedirect : '/candies'
+  });
+
+  // var callback(request, response);
+}
+
+function logout(request, response) {
+  request.logout();
+  response.redirect('/candies');
+}
+
 // GET
 function getAllUsers(request, response) {
   db.User.find(function(error, allUsers) {
@@ -64,5 +83,8 @@ module.exports = {
   getAllUsers: getAllUsers,
   createUser: createUser,
   getUser: getUser,
-  removeUser: removeUser
+  removeUser: removeUser,
+  login: login,
+  getCallback: getCallback,
+  logout: logout
 }

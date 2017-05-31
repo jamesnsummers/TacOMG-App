@@ -1,8 +1,13 @@
 var mongoose = require('mongoose');
 
 var UserSchema = mongoose.Schema({
-  firstName: String,
-  email: String
+  fb: {
+    id: String,
+    access_token: String,
+    firstName: String,
+    lastName: String,
+    email: String
+  }
 });
 
 module.exports = mongoose.model('User', UserSchema);
