@@ -29,12 +29,14 @@
 		<nav class="navbar navbar-default" id="navbar">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<a href="http://imgur.com/UQNynJ1"><img src="http://i.imgur.com/UQNynJ1.png" title="source: imgur.com" /></a> <a class="navbar-brand" href="#" id="navbar-brand">tacoMyGod</a>
+				<a href="http://imgur.com/UQNynJ1"><img src="http://i.imgur.com/UQNynJ1.png" title="source: imgur.com" /></a> <a class="navbar-brand" href="/" id="navbar-brand">tacoMyGod</a>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right" id="nav-right">
 					<% if(user != undefined){ %>
-						<li><a href="/logout" id="log-out">log out</a></li>
+						<li><a href="/logout" id="log-out">log out</a>
+							Hello <%= user.fb.firstName %>
+						</li>
 					<% }  %>
 					</ul>
 				</div><!-- /.navbar-collapse -->
@@ -53,7 +55,7 @@
 
 	<div class="container">
 		<% if (user) { %>
-			<%- include ./form.ejs %>
+			<%- include ./partials/forms/createTaco.ejs %>
 		<% } else { %>
 			You Need to be Logged In to Summon Tacos. <br>
 			<a class ="btn" href="/auth/facebook">Login with Facebook</a>

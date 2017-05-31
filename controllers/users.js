@@ -7,8 +7,8 @@ function login(request, response){
 
 function getCallback(request, response){
   var callback = passport.authenticate('facebook', {
-    successRedirect : '/candies',
-    failureRedirect : '/candies'
+    successRedirect : '/',
+    failureRedirect : '/'
   });
 
   // var callback(request, response);
@@ -16,14 +16,14 @@ function getCallback(request, response){
 
 function logout(request, response) {
   request.logout();
-  response.redirect('/candies');
+  response.redirect('/');
 }
 
 // GET
 function getAllUsers(request, response) {
   db.User.find(function(error, allUsers) {
     if(error) response.json({message: 'Could not find any users'});
-    response.json({users: allUsers});
+    response.render('partials/users/users', {users: allUsers});
   });
 }
 

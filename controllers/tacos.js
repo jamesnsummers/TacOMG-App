@@ -4,8 +4,8 @@ var db = require('../models');
 function getAllTacos(request, response) {
   db.Taco.find(function(error, allTacos) {
     if(error) response.json({message: 'Could not find any tacos'});
-    response.json({Taco: allTacos});
-    // response.render('layout', {tacos: allTacos});
+    // response.json({Taco: allTacos});
+    response.render('partials/tacos/tacos', {tacos: allTacos});
   });
 }
 

@@ -59,7 +59,6 @@ router.route('/users/:id')
 
   router.route('/auth/facebook').get(usersController.login);
 
-
   router.route('/auth/facebook/callback').get(usersController.getCallback);
 
   router.route('/logout').get(usersController.logout);

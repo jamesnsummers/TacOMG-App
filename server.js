@@ -31,7 +31,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 
-
+//need to restrict access
 app.get('/api/users', function(req, res) {
 // find all users in db
     db.User.find({}, function(err, allUsers) {
@@ -46,10 +46,8 @@ app.get('/api/tacos', function(req, res) {
     });
 });
 
-// app.post('')
-
 app.get('/', function(req, res){
-  res.render('layout', {tacos: req.body, user: req.user});
+  res.render('layout', {user: req.user});
 });
 
 // Setting up the Passport Strategies
@@ -71,10 +69,10 @@ app.get("/logout", function(req, res){
 
 // // Add static middleware
 app.use(express.static(__dirname + '/public'));
-//
-//
+
 app.use(routes);
 
+//listening at local host and heroku
 app.listen(process.env.PORT || 3000, function () {
   console.log('Express server is up and running on http://localhost:3000/');
 });

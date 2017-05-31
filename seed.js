@@ -69,6 +69,7 @@ db.Taco.remove({}, function(err, removedEverything){
         //console.log(allUsers);
 
         allUsers.forEach(function (user){
+
           db.Vote.create({
             _user: user._id,
             _taco: allTacos[0]._id
