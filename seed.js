@@ -27,11 +27,21 @@ var userList = [
       lastName: 'Tovar',
       email: 'benjamin.tovar510@gmail.com'
     }
+  },
+  {
+    fb: {
+      id: '2038pfununfdwf',
+      access_token: '42305928234034ljaekrlajnf350ifnowif',
+      firstName: 'Justin',
+      lastName: 'Castilla',
+      email: 'pxlperfection0@gmail.com'
+    }
   }
 ];
 
 var tacoList = [
   {
+
     tortilla: 'Flour',
     eggs: true,
     meat: 'Chorizo',
@@ -41,6 +51,7 @@ var tacoList = [
     potato: false
   },
   {
+
     tortilla: 'Corn',
     eggs: true,
     meat: 'Bacon',
@@ -50,6 +61,7 @@ var tacoList = [
     potato: false
   },
   {
+
     tortilla: 'Flour',
     eggs: true,
     meat: 'Bacon',
@@ -59,6 +71,7 @@ var tacoList = [
     potato: true
   },
   {
+
     tortilla: 'Wheat',
     eggs: false,
     meat: 'Soyrizo',
@@ -69,37 +82,47 @@ var tacoList = [
   }
 ];
 
-db.Taco.remove({}, function(err, removedEverything){
+
+db.User.remove({}, function(err, removedEverything){
   if(err){return console.log("ERR: ", err);}
 
- db.Taco.create(tacoList, function(err, allTacos){
+  db.User.create(userList, function(err, allUsers){
     if(err){return console.log("ERR: ", err);}
-    //console.log(allTacos);
+    //console.log(allUsers);
 
-    db.User.remove({}, function(err, removedEverything){
+    db.Taco.remove({}, function(err, removedEverything){
       if(err){return console.log("ERR: ", err);}
 
-     db.User.create(userList, function(err, allUsers){
+      db.Taco.create(tacoList, function(err, allTacos){
         if(err){return console.log("ERR: ", err);}
-        //console.log(allUsers);
+        allTacos[0].chef = allUsers[0];
+        allTacos[0].save();
+        allTacos[1].chef = allUsers[1];
+        allTacos[1].save();
+        allTacos[2].chef = allUsers[2];
+        allTacos[2].save();
+        allTacos[3].chef = allUsers[3];
+        allTacos[3].save();
+          //console.log(allTacos);
 
-        allUsers.forEach(function (user){
+          allUsers.forEach(function (user){
+            db.Vote.remove(function(err, succ){
 
-          db.Vote.create({
-            _user: user._id,
-            _taco: allTacos[0]._id
-          }, function(err, allVotes){
-            if(err){return console.log("ERR: ", err);}
-            //console.log(allVotes);
-            // we're in la-lah land here
-            db.Vote.find({_taco: allTacos[1]._id}, function(err, succ){
+            db.Vote.create({
+              _user: user._id,
+              _taco: allTacos[0]._id
+            }, function(err, allVotes){
               if(err){return console.log("ERR: ", err);}
-              console.log(succ.length + ' people voted for the taco with id ' + allTacos[1]._id);
-              process.exit(1);
+              //console.log(allVotes);
+              // we're in la-lah land here
+              db.Vote.find({_taco: allTacos[0]._id}, function(err, succ){
+                if(err){return console.log("ERR: ", err);}
+                console.log(succ.length + ' people voted for the taco with id ' + allTacos[0]._id);
+                process.exit(1);
+              });
+            });
             });
           });
-        });
-
       });
     });
   });

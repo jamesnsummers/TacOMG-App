@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var User = require('./User');
 
 var TacoSchema = new Schema({
-  user: {
+  chef: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },

@@ -31,7 +31,10 @@ function getAllUsers(request, response) {
 function createUser(request, response) {
   var user = new db.User();
 
+  user.id = request.body.id;
+  user.access_token = request.body.access_token;
   user.firstName = request.body.firstName;
+  user.lastName = request.body.lastName;
   user.email = request.body.email;
 
   user.save(function(error) {
