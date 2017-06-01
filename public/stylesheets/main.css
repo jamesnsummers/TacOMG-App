@@ -1,5 +1,43 @@
+/*landing page*/
 body {
-  background-color: #efc3e7;
+  background-color: #15184d;
+}
+img {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 50%;
+  height: auto;
+}
+
+h1 {
+  font-family: 'Chango', cursive;
+  font-size: 30px;
+  color: white;
+}
+
+p#landing-page {
+  font-family: 'Cabin', sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
+a#landing-btn {
+  margin-top: 3%;
+  font-family: 'Cabin', sans-serif;
+  background-color: #3b5998;
+  color: white;
+  font-size: 16px;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a#landing-btn:hover {
+  background-color: #6d84b4;
+}
+
+
+/*body {*/
+  /*background-color: #efc3e7;*/
 }
 
 img {
