@@ -1,19 +1,46 @@
 var db = require('../models');
 var passport = require('passport');
+require("../config/passport")(passport);
 
-// Setting up the Passport Strategies
-require("../config/passport")(passport)
 // GET
 function getAllTacos(request, response) {
   db.Taco.find().populate('chef')
   .exec(function(error, allTacos) {
     if(error) response.json({message: 'Could not find any tacos'});
-    // response.json({Taco: allTacos});
+
     // require any and all passport junk to be able to pass in req.user into your ejs json object
     console.log (allTacos);
     var chefs = allTacos.map(function (taco){
+      taco.getVotes();
       return {firstName: taco.chef.fb.firstName, id: taco.chef._id};
     });
+    // // stop user from voting for single taco more than once
+    // allTacos.forEach(function(taco, user){
+    //   tacoId = taco._id;
+    //   userId = user._id
+    //   db.Vote.findOne({tacoId, userId}, function(err, succ){
+    //     if (succ) {taco.voted === true;}
+    //     else {taco.voted === false;}
+    //   });
+    // });
+
+    // votes = allTacos.map(function(taco){
+    //   vote = taco.getVotes();
+    //   console.log('\n Vote: '+ vote + '\n');
+    //   return vote;
+    // });
+
+
+
+    // tally the votes for all tacos
+    // allTacos = allTacos.map(function(taco){
+    //   db.Vote.findOne({taco: request.body.tacoId}, function(err, succ){
+    //     taco.voteCount = succ.length;
+    //     console.log(succ);
+    //
+    //   });
+    //     return taco;
+    // });
     response.render('partials/tacos/tacos', {chefs: chefs, tacos: allTacos, user: request.user});
   });
 }

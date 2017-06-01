@@ -16,13 +16,10 @@ function createVote(request, response) {
     console.log("\nCreated New Vote\n");
     response.json(newVote);
   });
-
 }
 
-function findVote(request, response){
-  db.Vote.findOne({_user: request.user._id, _taco: request.body.tacoId})
-    .detach('.buttonPlus btn btn-info');
-}
+
+
 // how to look for duplicates:
 
 /*
@@ -32,25 +29,6 @@ function findVote(request, response){
 
     if they haven't voted, send a json response of {hasVoted: false}
 */
-// find the author from req.body
-
-
-
-
-
-function createBookWithAuthorAndRespondTo(book, author, res) {
-// add this author to the book
-book.author = author;
-// save newBook to database
-book.save(function(err, book){
-  if (err) {
-    return console.log("save error: " + err);
-  }
-  console.log("saved ", book.title);
-  // send back the book!
-  res.json(book);
-});
-}
 
 module.exports = {
   createVote : createVote
