@@ -31,7 +31,8 @@ router.route('/tacos/:id')
   // GET return specific taco
   .get(tacosController.getTaco)
 
-
+  // PATCH update existing taco
+  .patch(tacosController.updateTaco)
 
   // DELETE remove specific taco from DB
   .delete(tacosController.removeTaco);
@@ -60,8 +61,7 @@ router.route('/users/:id')
 
   .post(votesController.createVote);
 
-  // PATCH update(vote) existing taco
-  //.patch(tacosController.voteTaco);
+
 
   router.route('/auth/facebook').get(usersController.login);
 
