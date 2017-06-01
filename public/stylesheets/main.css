@@ -26,6 +26,10 @@ a#navbar-brand {
   margin-bottom: 15px;
 }
 
+a#navbar-brand:hover {
+  color: white;
+}
+
 img#logo {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -35,18 +39,26 @@ img#logo {
   float: left;
 }
 
-.nav li{
+#nav-gal-right li{
   display: inline;
 }
 
 #log-out {
   color: #ace7a6;
   font-family: 'Cabin', sans-serif;
+  margin: 15px 0px 15px 0px;
+  padding: 15px 5px 15px 15px;
+}
+
+#log-out:hover {
+  color: white;
 }
 
 #greet-user {
   color: #ace7a6;
   font-family: 'Cabin', sans-serif;
+  margin: 15px 0px 15px 0px;
+  padding: 15px;
 }
 
 h4#chef-title {
@@ -57,19 +69,12 @@ h4#chef-title {
   margin-top: 15px;
 }
 
-h2 {
-  margin-top: 3%;
-  margin-bottom: 5%;
-  font-family: 'Cabin', sans-serif;
-  font-size: 26px;
-  color: black;
-}
-
 div.card {
   background-color: black;
   border-radius: 8px;
   padding: 0px;
-  margin-left: 20px;
+  margin: 15px;
+  width: 30rem;
 }
 
 nav#name-bar {
@@ -80,30 +85,34 @@ nav#name-bar {
   border: 1px, solid, black;
 }
 
-h4 {
+h4#chef-title {
   font-family: 'Chango', cursive;
   font-size: 18px;
   color: black;
   float: left;
   margin-top: 15px;
+  margin-left: 15px;
 }
+
 div.card-body {
   padding: 15px;
 }
 
-img {
+img#gal-thumbnail {
   width: 125px;
   height: auto;
   float: right;
+  padding-top: 3em;
 }
 
 ul.card-text{
   list-style-type: none;
+  padding: 0;
 }
 
 .card-text li {
   font-family: 'Cabin', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
   word-wrap: break-word;
 }
@@ -115,14 +124,22 @@ a.btn {
   color: black
 }
 
-ul#voting {
-  float: right;
+a.btn:hover {
+  background-color: #efc3e7;
 }
 
-#voting li{
+#voting li {
   list-style-type: none;
-  font-family: 'Cabin', sans-serif;
-  font-size: 14px;
+  float: right;
+  margin-top: 5px;
   color: white;
-  display: inline;
+}
+
+ul#voting {
+  padding: 0;
+  margin: 0;
+}
+
+li.count {
+  margin-right: 3px;
 }
