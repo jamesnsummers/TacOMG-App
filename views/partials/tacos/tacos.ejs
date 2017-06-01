@@ -76,6 +76,15 @@
           //you'll need the tacoid and the userid
           // use a data-userid= <%= user._id %>
           // .data('userid') => userId that you embed there
+          function postVote() {
+            $.ajax({
+              method: "POST",
+              url: ,
+              data: $(user.id, taco.id).serialize(),
+              success: onSuccess,
+              error: onError
+            });
+          }
 
         });
 
