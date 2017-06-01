@@ -57,9 +57,9 @@ router.route('/users/:id')
   // DELETE remove specific user from DB
   .delete(usersController.removeUser);
 
-  router.route('/votes')
+  router.route('/votes/:tacoId')
 
-  .post(votesController.createVote);
+  .get(votesController.createVote);
 
 
 
