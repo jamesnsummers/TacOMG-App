@@ -32,8 +32,9 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right" id="nav-right">
 					<% if(user != undefined){ %>
-						<li><a href="/logout" id="log-out">log out</a>
-							Hello <%= user.fb.firstName %>
+						<li class = 'greeting'><br>
+							<%= user.fb.firstName %> is logged in!
+							<a href="/logout" id="log-out">log out</a>
 						</li>
 					<% }  %>
 					</ul>

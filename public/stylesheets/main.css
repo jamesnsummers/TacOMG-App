@@ -25,6 +25,15 @@ img {
   margin-bottom: 15px;
 }
 
+.greeting {
+  color: #efc3e7;
+  font-family: 'Cabin', sans-serif;
+}
+
+#cardTitle {
+  text-decoration: underline;
+}
+
 .container-fluid {
   background-color: black;
 }
