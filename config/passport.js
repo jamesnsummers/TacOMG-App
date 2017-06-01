@@ -37,7 +37,7 @@ module.exports = function(passport){
           newUser.fb.access_token = access_token;
           newUser.fb.firstName    = profile.name.givenName;
           newUser.fb.lastName     = profile.name.familyName;
-          newUser.fb.email        = profile.emails[0].value;
+          newUser.fb.email        = profile.emails[0];
 
           newUser.save(function(err) {
             if (err)
