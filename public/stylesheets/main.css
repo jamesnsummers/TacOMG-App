@@ -30,6 +30,10 @@ img {
   font-family: 'Cabin', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 #cardTitle {
   text-decoration: underline;
 }

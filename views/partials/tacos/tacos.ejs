@@ -41,43 +41,45 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  <ul>
-    <% for(var i=0; i< tacos.length; i++) {  %>
-        <li>
-          <div class="col-md-6 col-md card">
-          <h4>
-            <!-- <em><%= chefs[i].id %></em> -->
-            <b id="cardTitle"><%= chefs[i].firstName %>'s Taco </b><br>
-            <!-- <b>ID : </b> <%= tacos[i].id %><br> -->
-            <b>Tortilla : </b> <%= tacos[i].tortilla %><br>
-            <b>Eggs : </b> <%= tacos[i].eggs %><br>
-            <b>Meat : </b> <%= tacos[i].meat %><br>
-            <b>Salsa : </b> <%= tacos[i].salsa %><br>
-            <b>Cheese : </b> <%= tacos[i].cheese %><br>
-            <b>Beans : </b> <%= tacos[i].beans %><br>
-            <b>Potato : </b> <%= tacos[i].potato %><br>
-          </h4>
+  <div class="container">
+    <ul>
+      <% for(var i=0; i< tacos.length; i++) {  %>
+          <li>
+            <div class="col-md-4 col-md card">
+            <h4>
+              <!-- <em><%= chefs[i].id %></em> -->
+              <p id="cardTitle"><%= chefs[i].firstName %>'s Taco </p><br>
+              <!-- <b>ID : </b> <%= tacos[i].id %><br> -->
+              <p>Tortilla : </p> <%= tacos[i].tortilla %><br>
+              <p>Eggs : </p> <%= tacos[i].eggs %><br>
+              <p>Meat : </p> <%= tacos[i].meat %><br>
+              <p>Salsa : </p> <%= tacos[i].salsa %><br>
+              <p>Cheese : </p> <%= tacos[i].cheese %><br>
+              <p>Beans : </p> <%= tacos[i].beans %><br>
+              <p>Potato : </p> <%= tacos[i].potato %><br>
+            </h4>
 
-          <p class="count">0</p>
-          <p class="buttonPlus">+</p>
+            <p class="count">0</p>
+            <p class="buttonPlus btn btn-info">+</p>
 
-          </div>
-        </li>
+            </div>
+          </li>
 
-    <% } %>
-    <script  type="text/javascript">
-      var counter = 0;
-      console.log("I am listening");
-      $(".card").on('click', '.buttonPlus', function(e){
-        var count = $(this).prev().text()
-        $(this).prev().text(++count);
-        // make your vote creation ajax call RIGHT HERE
-        //you'll need the tacoid and the userid
-        // use a data-userid= <%= user._id %>
-        // .data('userid') => userId that you embed there
+      <% } %>
+      <script  type="text/javascript">
+        var counter = 0;
+        console.log("I am listening");
+        $(".card").on('click', '.buttonPlus', function(e){
+          var count = $(this).prev().text()
+          $(this).prev().text(++count);
+          // make your vote creation ajax call RIGHT HERE
+          //you'll need the tacoid and the userid
+          // use a data-userid= <%= user._id %>
+          // .data('userid') => userId that you embed there
 
-      });
+        });
 
-    </script>
-  </ul>
+      </script>
+    </ul>
+  </div>
 </body>
