@@ -5,17 +5,41 @@ require("../config/passport")(passport)
 
 function createVote(request, response) {
   //response.json({message: 'TACO: ' + request.body.tacoId + ' USER:' + request.user._id});
-
   var newVote = {
-    _user: request.user._id,
-    _taco: request.body.tacoId
+    _user: request.user,
+    _taco: request.params.tacoId
   };
 
   db.Vote.create(newVote, function(error, newVote) {
     if(error) response.json({messsage: 'Could not ceate vote b/c:' + error});
     console.log("\nCreated New Vote\n");
-    response.json(newVote);
+    // 1. find taco via params
+    // 2. find user via req.user
+    // 3.
+    db.Taco.findOne({_id: newVote._taco}, function(err, votedTaco){
+      if(err){return console.log(err);}
+
+      votedTaco.votes++;
+
+      votedTaco.save(function(err, updatedTaco){
+
+        if(err){return console.log(err);}
+
+        db.Taco.find(function(err, allTacos){
+
+          if(err){return console.log(err);}
+          response.redirect('/tacos');
+
+        })
+      })
+
+    });
+
+
+
   });
+
+
 }
 
 

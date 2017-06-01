@@ -15,20 +15,20 @@ var TacoSchema = new Schema({
   cheese: Boolean,
   beans: String,
   potato: Boolean,
-  votes: Number
+  votes: {type:Number, default: 0}
 });
 
-TacoSchema.methods.getVotes = function(){
-  var total;
-  var taco = this;
-  Vote.find({_taco: this._id}, function(err, succ){
-    if(err){return console.log(err);}
-    taco.votes = succ.length;
-    taco.save(function(err, succ){
-      console.log(succ);
-      return succ;
-    });
-  });
-}
+// TacoSchema.methods.getVotes = function(){
+//   var total;
+//   var taco = this;
+//   Vote.find({_taco: this._id}, function(err, succ){
+//     if(err){return console.log(err);}
+//     taco.votes = succ.length;
+//     taco.save(function(err, succ){
+//       console.log(succ);
+//       return succ;
+//     });
+//   });
+// }
 
 module.exports = mongoose.model('Taco', TacoSchema);
