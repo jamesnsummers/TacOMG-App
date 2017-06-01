@@ -5,6 +5,7 @@ var express = require('express'),
 
 var tacosController = require('../controllers/tacos');
 var usersController = require('../controllers/users');
+var votesController = require('../controllers/votes');
 
 
 var isAuthenticated = function (req, res, next) {
@@ -23,16 +24,14 @@ router.route('/tacos')
   .get(tacosController.getAllTacos)
 
   //POST a new blob
-  .post(tacosController.createTaco);
-
+  .post(tacosController.createTaco)
 
 router.route('/tacos/:id')
 
   // GET return specific taco
   .get(tacosController.getTaco)
 
-  // PATCH update(vote) existing taco
-  // .patch(tacosController.voteTaco)
+
 
   // DELETE remove specific taco from DB
   .delete(tacosController.removeTaco);
@@ -56,6 +55,13 @@ router.route('/users/:id')
 
   // DELETE remove specific user from DB
   .delete(usersController.removeUser);
+
+  router.route('/votes')
+
+  .post(votesController.createVote);
+
+  // PATCH update(vote) existing taco
+  //.patch(tacosController.voteTaco);
 
   router.route('/auth/facebook').get(usersController.login);
 

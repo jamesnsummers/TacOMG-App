@@ -34,7 +34,7 @@ ul {
   list-style: none;
 }
 
-#cardTitle {
+.cardTitle {
   text-decoration: underline;
 }
 
