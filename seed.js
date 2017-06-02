@@ -48,7 +48,8 @@ var tacoList = [
     salsa: true,
     cheese: true,
     beans: 'Black',
-    potato: false
+    potato: false,
+    votes: 0
   },
   {
 
@@ -58,7 +59,8 @@ var tacoList = [
     salsa: true,
     cheese: true,
     beans: '',
-    potato: false
+    potato: false,
+    votes: 0
   },
   {
 
@@ -68,7 +70,9 @@ var tacoList = [
     salsa: true,
     cheese: true,
     beans: 'Black',
-    potato: true
+    potato: true,
+    votes: 0
+
   },
   {
 
@@ -78,7 +82,8 @@ var tacoList = [
     salsa: true,
     cheese: false,
     beans: 'Refried',
-    potato: true
+    potato: true,
+    votes: 0
   }
 ];
 
@@ -103,7 +108,6 @@ db.User.remove({}, function(err, removedEverything){
         allTacos[2].save();
         allTacos[3].chef = allUsers[3];
         allTacos[3].save();
-          //console.log(allTacos);
 
           allUsers.forEach(function (user){
             db.Vote.remove(function(err, succ){
@@ -113,7 +117,6 @@ db.User.remove({}, function(err, removedEverything){
               _taco: allTacos[0]._id
             }, function(err, allVotes){
               if(err){return console.log("ERR: ", err);}
-              //console.log(allVotes);
               // we're in la-lah land here
               db.Vote.find({_taco: allTacos[0]._id}, function(err, succ){
                 if(err){return console.log("ERR: ", err);}

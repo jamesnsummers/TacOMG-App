@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>TACOHMYGOD</title>
-
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css" /></head>
 	<link href="https://fonts.googleapis.com/css?family=Istok+Web|News+Cycle" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Chango|Chelsea+Market|Knewave|Luckiest+Guy|Monoton|Press+Start+2P" rel="stylesheet">
@@ -12,15 +11,8 @@
 	<link href="../stylesheets/main.css" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
-	<script type="text/javascript">
+  <script src="scripts/app.js"></script>
 
-	$(document).ready(function() {
-		$('.dropdown-toggle').dropdown()
-	});
-
-	</script>
-
-	<meta charset="utf-8">
 </head>
 <body id="taco-gallery">
 	<header>
@@ -65,21 +57,6 @@
 						</ul>
           </div>
         </div>
-
-
     <% } %>
-    <script  type="text/javascript">
-      var counter = 0;
-      console.log("I am listening");
-      $(".card").on('click', '.buttonPlus', function(e){
-        var count = $(this).prev().text()
-        $(this).prev().text(++count);
-        // make your vote creation ajax call RIGHT HERE
-        //you'll need the tacoid and the userid
-        // use a data-userid= <%= user._id %>
-        // .data('userid') => userId that you embed there
 
-      });
-
-    </script>
 </body>

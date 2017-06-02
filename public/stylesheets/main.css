@@ -144,6 +144,7 @@ img#taco-portal {
 body#create-taco {
     background-image: url("../../images/background2.png");
     background-size:  cover;
+
 }
 
 h2 {
@@ -180,7 +181,15 @@ hr {
   height: 34px;
 }
 
-.switch input {display:none;}
+.switch input {
+  display:none;
+}
+
+#dropdown {
+  background-color: gray;
+  font-family: 'Cabin', sans-serif;
+  border: none;
+}
 
 .slider {
   position: absolute;
@@ -303,6 +312,7 @@ input#submit-taco:hover {
   background-color: #29dffe;
   border-color: black;
 }
+
 
 /*///////////////////////////////////
 /////+++++++++++++++++++++++++//////

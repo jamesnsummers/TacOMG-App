@@ -1,70 +1,59 @@
+//TODO: put in vote controller
+var db = require('../models');
+var passport = require('passport');
+require("../config/passport")(passport)
+
+function createVote(request, response) {
+  //response.json({message: 'TACO: ' + request.body.tacoId + ' USER:' + request.user._id});
+  var newVote = {
+    _user: request.user,
+    _taco: request.params.tacoId
+  };
+
+  db.Vote.create(newVote, function(error, newVote) {
+    if(error) response.json({messsage: 'Could not ceate vote b/c:' + error});
+    console.log("\nCreated New Vote\n");
+    // 1. find taco via params
+    // 2. find user via req.user
+    // 3.
+    db.Taco.findOne({_id: newVote._taco}, function(err, votedTaco){
+      if(err){return console.log(err);}
+
+      votedTaco.votes++;
+
+      votedTaco.save(function(err, updatedTaco){
+
+        if(err){return console.log(err);}
+
+        db.Taco.find(function(err, allTacos){
+
+          if(err){return console.log(err);}
+          response.redirect('/tacos');
+
+        })
+      })
+
+    });
 
 
-// var db = require('../models');
-//
-// // GET
-// function getAllVotes(request, response) {
-//   db.Vote.find(function(error, allVotes) {
-//     if(error) response.json({message: 'Could not find any votes'});
-//     response.json({votes: allVotes});
-//   });
-// }
-//
-// // POST
-// function createVote(request, response) {
-//   var vote = new db.Vote();
-//
-//   vote.firstName = request.body.firstName;
-//   user.email = request.body.email;
-//
-//   user.save(function(error) {
-//     if(error) response.json({messsage: 'Could not ceate user b/c:' + error});
-//
-//     response.redirect('/users');
-//   });
-// }
-//
-// // GET
-// function getUser(request, response) {
-//   var id = request.params.id;
-//
-//   db.User.findById({_id: id}, function(error, user) {
-//     if(error) response.json({message: 'Could not find user b/c:' + error});
-//
-//     response.json({user: user});
-//   });
-// }
-//
-// // //UPDATE
-// // function voteTaco(request, response) {
-// //   var id = request.params.id;
-// //
-// //   db.Taco.findById({_id: id}, function(error, taco) {
-// //     if(error) response.json({message: 'Could not find taco b/c:' + error});
-// //
-// //     if(request.body.id) taco.id = request.body.id;
-// //
-// //     taco.save(function(error) {
-// //       if(error) response.json({messsage: 'Could not update taco b/c:' + error});
-// //
-// //       response.json({message: 'Taco successfully updated'});
-// //     });
-// //   });
-// // }
-//
-// function removeUser(request, response) {
-//   var id = request.params.id;
-//
-//   db.User.remove({_id: id}, function(error) {
-//     if(error) response.json({message: 'Could not delete user b/c:' + error});
-//
-//     response.json({message: 'User successfully deleted'});
-//   });
-// }
-//
-// module.exports = {
-//   getAllUsers: getAllUsers,
-//   createUser: createUser,
-//   getUser: getUser,
-//   removeUser: removeUser
-// }
+
+  });
+
+
+}
+
+
+
+// how to look for duplicates:
+
+/*
+  1. Find if a vote exists with current user and taco id
+    if it does, deny the user the ability to vote.
+    maybe send a json response of {hasVoted: true}
+
+    if they haven't voted, send a json response of {hasVoted: false}
+*/
+
+module.exports = {
+  createVote : createVote
+}
