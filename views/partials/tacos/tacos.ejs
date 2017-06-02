@@ -26,12 +26,13 @@
 	<header>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid" id="navbar">
-				<img id="logo" src="http://i.imgur.com/UQNynJ1.png" title="source: imgur.com" />
+				<img id="logo" src="http://i.imgur.com/qDQp7AB.png" title="source: imgur.com" />
 				<a class="navbar-brand" href="/" id="navbar-brand">tacoMyGod</a>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<% if(user != undefined){ %>
 					<ul class="nav navbar-nav navbar-right" id="nav-gal-right">
 						<li id="greet-user">Hello, <%= user.fb.firstName %></li>
+						<li><a href="/" id="log-out">create a taco</a></li>
 						<li><a href="/logout" id="log-out">log out</a></li>
 					</ul>
 					<% }  %>
@@ -42,7 +43,7 @@
     <% for(var i=0; i< tacos.length; i++) {  %>
 			<div class="container">
       <div class="row">
-        <div class="col-md-4 card">
+        <div class="col-lg-4 col-md-4 col-sm-4 card">
           <nav class="navbar navbar-default text-center" id="name-bar">
               <h4 class="card-title" id="chef-title"><b><%= chefs[i].firstName %>'s Taco</b></h4>
           </nav>
@@ -60,7 +61,7 @@
 						<ul id="voting">
 	          	<li id="votes">vote(s)</li>
 							<li class="count">0 </li>
-							<a class="buttonPlus btn btn-primary"><b>Vote for this taco</b></a>
+							<a class="buttonPlus btn btn-primary"><b>vote</b></a>
 						</ul>
           </div>
         </div>

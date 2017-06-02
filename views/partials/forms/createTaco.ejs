@@ -1,3 +1,21 @@
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid" id="navbar">
+      <img id="logo" src="http://i.imgur.com/UQNynJ1.png" title="source: imgur.com" />
+      <a class="navbar-brand" href="/" id="ct-navbar-brand">tacoMyGod</a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% if(user != undefined){ %>
+        <ul class="nav navbar-nav navbar-right" id="nav-gal-right">
+          <li id="ct-greet-user">Hello, <%= user.fb.firstName %></li>
+          <li><a href="/tacos" id="ct-log-out">taco gallery</a></li>
+          <li><a href="/logout" id="ct-log-out">log out</a></li>
+        </ul>
+        <% }  %>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+<h4 id="confirmation">You are now a Taco God! Go forth and create...</h4>
 <div class="container text-center">
 <div class="row">
   <h2><b>create your taco</b></h2>
@@ -98,7 +116,7 @@
       </div>
     </div>
     <div class="container text-center">
-      <input class="btn btn-primary" type="submit" value="submit taco!">
+      <input class="btn btn-primary" id="submit-taco" type="submit" value="submit taco!">
     </div>
   </form>
 </fieldset>

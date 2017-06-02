@@ -1,13 +1,49 @@
 body {
   font-family: 'Cabin', sans-serif;
 }
-/*begin tacoGallery*/
 
-body#taco-gallery {
-  background-color: #ace7a6;
+body#landing-pg {
+  background-image: url("../../images/background3.png");
+  background-size: cover;
 }
 
-/*taco gallery navigation bar*/
+img#landing-logo {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 40%;
+  height: auto;
+}
+
+h1 {
+  font-family: 'Chango', cursive;
+  font-size: 36px;
+  color: white;
+}
+
+a#fb-login {
+  margin-top: 3%;
+  font-family: 'Cabin', sans-serif;
+  background-color: #4FDB4A;
+  border-color: black;
+  font-size: 16px;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a#fb-login:hover {
+  background-color: #6fe26b;
+  font-size: 17px;
+}
+
+/*///////////////////////////////////
+//////++++++++++++++++++++++++///////
+//////+begin create-taco page+///////
+//////++++++++++++++++++++++++///////
+///////////////////////////////////*/
+
+/*////////////////////
+/begin navigation bar/
+////////////////////*/
 .container-fluid#navbar {
   background-color: black;
 }
@@ -21,17 +57,29 @@ body#taco-gallery {
 a#navbar-brand {
   margin-left: 1px;
   font-family: 'Chango', cursive;
-  color: #ace7a6;
+  color: #4FDB4A;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+a#ct-navbar-brand {
+  margin-left: 1px;
+  font-family: 'Chango', cursive;
+  color: #FF0057;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
 a#navbar-brand:hover {
-  color: white;
+  color: #FFF231;
+}
+
+a#ct-navbar-brand:hover {
+  color: #02D9FE;
 }
 
 img#logo {
-  margin-top: 15px;
+  margin-top: 19px;
   margin-bottom: 15px;
   margin-left: 5px;
   width: auto;
@@ -44,21 +92,235 @@ img#logo {
 }
 
 #log-out {
-  color: #ace7a6;
+  color: #4FDB4A;
+  font-family: 'Cabin', sans-serif;
+  margin: 15px 0px 15px 0px;
+  padding: 15px 5px 15px 15px;
+}
+
+#ct-log-out {
+  color: #FF0057;
   font-family: 'Cabin', sans-serif;
   margin: 15px 0px 15px 0px;
   padding: 15px 5px 15px 15px;
 }
 
 #log-out:hover {
-  color: white;
+  color: #FFF231;
+}
+
+#ct-log-out:hover {
+    color: #02D9FE;
 }
 
 #greet-user {
-  color: #ace7a6;
+  color: #4FDB4A;
   font-family: 'Cabin', sans-serif;
   margin: 15px 0px 15px 0px;
   padding: 15px;
+}
+
+#ct-greet-user {
+  color: #FF0057;
+  font-family: 'Cabin', sans-serif;
+  margin: 15px 0px 15px 0px;
+  padding: 15px;
+}
+ /*////////////////////
+ /end navigation bar/
+ ////////////////////*/
+
+h4#confirmation {
+  margin-left: 20px;
+  font-size: 14px;
+  color: black;
+}
+
+img#taco-portal {
+  width: 125px;
+  height: auto;
+}
+
+body#create-taco {
+    background-image: url("../../images/background2.png");
+    background-size:  cover;
+}
+
+h2 {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  font-family: 'Cabin', sans-serif;
+  font-size: 26px;
+  color: black;
+}
+
+p {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+}
+
+button.btn {
+  font-family: 'Cabin', sans-serif;
+  font-size: 18px;
+  border-radius: 0px;
+  background-color: white;
+}
+
+hr {
+  font-size: 5px;
+  width: 75%;
+  color: black;
+}
+
+/*Toggle Switches*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #708090;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider#eggs-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ffc800;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+input#eggs:checked + .slider {
+  background-color: white;
+}
+
+input#eggs:focus + .slider {
+  box-shadow: 0 0 1px white;
+}
+
+.slider#potatoes-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #efe9cf;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+input#potatoes:checked + .slider {
+  background-color: #80461B;
+}
+
+input#potatoes:focus + .slider {
+  box-shadow: 0 0 1px #80461B
+}
+.slider#cheese-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #d37001;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+input#cheese:checked + .slider {
+  background-color: #fd941f;
+}
+
+input#cheese:focus + .slider {
+  box-shadow: 0 0 1px #fd941f;
+}
+
+.slider#salsa-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #52b903;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+input#salsa:checked + .slider {
+  background-color: #ff3700;
+}
+
+input#salsa:focus + .slider {
+  box-shadow: 0 0 1px #ff3700;
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/*End Toggle Switches*/
+
+input#submit-taco {
+  font-family: 'Cabin', sans-serif;
+  font-size: 18px;
+  border-radius: 0px;
+  background-color: #02D9FE;
+  color: black;
+  border-color: black;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input#submit-taco:hover {
+  font-size: 19px;
+  background-color: #29dffe;
+  border-color: black;
+}
+
+/*///////////////////////////////////
+/////+++++++++++++++++++++++++//////
+/////+end of create-taco page+//////
+/////+++++++++++++++++++++++++//////
+///////////////////////////////////*/
+
+
+/*///////////////////////////////////
+///^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^///
+///beginning of taco gallery page///
+///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~///
+///////////////////////////////////*/
+
+
+body#taco-gallery {
+  background-image: url("../../images/background1.png");
+  background-size:  cover;
 }
 
 h4#chef-title {
@@ -70,23 +332,29 @@ h4#chef-title {
 }
 
 div.card {
-  background-color: black;
+  background-color: white;
   border-radius: 8px;
   padding: 0px;
   margin: 15px;
   width: 30rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 nav#name-bar {
-  background-color: white;
-  color: black;
+  background: #FFF231; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#FD5F00, #FFF231); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FD5F00, #FFF231); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FD5F00, #FFF231); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#FD5F00, #FFF231); /* Standard syntax (must be last) */
+  color: #02D9FE;
   border-radius: 8px 8px 0px 0px;
   margin-bottom: 0px;
-  border: 1px, solid, black;
+  border: 1px, solid, #02D9FE;
 }
 
 h4#chef-title {
-  font-family: 'Chango', cursive;
+  font-family: 'Cabin', sans-serif;
   font-size: 18px;
   color: black;
   float: left;
@@ -96,6 +364,10 @@ h4#chef-title {
 
 div.card-body {
   padding: 15px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-radius: 0px 0px 8px 8px;
 }
 
 img#gal-thumbnail {
@@ -113,26 +385,30 @@ ul.card-text{
 .card-text li {
   font-family: 'Cabin', sans-serif;
   font-size: 16px;
-  color: white;
+  color: black;
   word-wrap: break-word;
 }
 
 a.btn {
-  font-family: 'Cabin', sans-serif;
-  font-size: 12px;
-  background-color: white;
-  color: black
+  font-family: 'Chango', cursive;
+  font-size: 10px;
+  background-color: #02D9FE;
+  color: black;
+  border-color: #29dffe;
+  border-radius: 8px;
 }
 
 a.btn:hover {
-  background-color: #efc3e7;
+  background-color: #29dffe;
+  border-color: #50e5fe;
+  color: black;
 }
 
 #voting li {
   list-style-type: none;
   float: right;
   margin-top: 5px;
-  color: white;
+  color: black;
 }
 
 ul#voting {
@@ -143,3 +419,9 @@ ul#voting {
 li.count {
   margin-right: 3px;
 }
+
+/*///////////////////////////////////
+///^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^///
+///end of taco gallery page///
+///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~///
+///////////////////////////////////*/
