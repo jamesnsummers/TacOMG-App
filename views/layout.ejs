@@ -23,51 +23,27 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<header>
-		<nav class="navbar navbar-default" id="navbar">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<a href="http://imgur.com/UQNynJ1"><img src="http://i.imgur.com/UQNynJ1.png" title="source: imgur.com" /></a> <a class="navbar-brand" href="/" id="navbar-brand">tacoMyGod</a>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right" id="nav-right">
-					<% if(user != undefined){ %>
-						<li class = 'greeting'><br>
-							<%= user.fb.firstName %> is logged in!
-							<a href="/tacos" id="tacoGallery">Taco Gallery</a>
-							<a href="/logout" id="log-out">log out</a>
-						</li>
-					<% }  %>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
-	</header>
-	<!-- <h1>
-		<a target="_blank" href="https://www.youtube.com/watch?v=Ov8mAjlDhd8">TACOHMYGOD</a>
-	</h1> -->
 
-	<% if(user != undefined){ %>
-		    <h4>You're Now A Taco God! Go forth and create...</h4>
-		  <% }  %>
-
-	<hr>
-
-	<div class="container">
 		<% if (user) { %>
+			<% if(user != undefined){ %>
+				<body id="create-taco"
+				<% }  %>
 			<%- include ./partials/forms/createTaco.ejs %>
 		<% } else { %>
-			You Need to be Logged In to Summon Tacos. <br>
-			<a class ="btn" href="/auth/facebook">Login with Facebook</a>
+		<body id="landing-pg">
+
+			<div class="container text-center">
+      	<div class="row">
+					<img id="landing-logo" src="../images/newtaco.png" title="taco-logo" />
+        	<h1>tacoMyGod!</h1>
+					<h3>You Need to be Logged In to Summon Tacos.</h3>
+					<a class ="btn" id="fb-login" href="/auth/facebook"><i class="fa fa-facebook" aria-hidden="true"></i> | Login with Facebook</a>
+      	</div>
+    	</div>
+
+		</body>
 		<% } %>
 
-	</div>
-
-	<hr>
-
-	<div class="container">
-
-	</div>
 
 </body>
 </html>

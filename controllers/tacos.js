@@ -11,7 +11,6 @@ function getAllTacos(request, response) {
     // require any and all passport junk to be able to pass in req.user into your ejs json object
     console.log (allTacos);
     var chefs = allTacos.map(function (taco){
-      // taco.getVotes();
       return {firstName: taco.chef.fb.firstName, id: taco.chef._id};
     });
 

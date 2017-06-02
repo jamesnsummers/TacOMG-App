@@ -1,45 +1,150 @@
 body {
-  background-color: #efc3e7;
+  font-family: 'Cabin', sans-serif;
 }
 
-img {
+body#landing-pg {
+  background-image: url("../../images/background3.png");
+  background-size: cover;
+}
+
+img#landing-logo {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 40%;
+  height: auto;
+}
+
+h1 {
+  font-family: 'Chango', cursive;
+  font-size: 36px;
+  color: white;
+}
+
+a#fb-login {
+  margin-top: 3%;
+  font-family: 'Cabin', sans-serif;
+  background-color: #4FDB4A;
+  border-color: black;
+  font-size: 16px;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a#fb-login:hover {
+  background-color: #6fe26b;
+  font-size: 17px;
+}
+
+/*///////////////////////////////////
+//////++++++++++++++++++++++++///////
+//////+begin create-taco page+///////
+//////++++++++++++++++++++++++///////
+///////////////////////////////////*/
+
+/*////////////////////
+/begin navigation bar/
+////////////////////*/
+.container-fluid#navbar {
+  background-color: black;
+}
+
+.navbar-default {
+  background-color: black;
+  border-color: black;
+  border-radius: 0px;
+}
+
+a#navbar-brand {
+  margin-left: 1px;
+  font-family: 'Chango', cursive;
+  color: #4FDB4A;
   margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+a#ct-navbar-brand {
+  margin-left: 1px;
+  font-family: 'Chango', cursive;
+  color: #FF0057;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+a#navbar-brand:hover {
+  color: #FFF231;
+}
+
+a#ct-navbar-brand:hover {
+  color: #02D9FE;
+}
+
+img#logo {
+  margin-top: 19px;
   margin-bottom: 15px;
   margin-left: 5px;
   width: auto;
   height: 35px;
   float: left;
 }
+
+#nav-gal-right li{
+  display: inline;
+}
+
 #log-out {
-  color: #efc3e7;
+  color: #4FDB4A;
   font-family: 'Cabin', sans-serif;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 15px 0px 15px 0px;
+  padding: 15px 5px 15px 15px;
 }
 
-#navbar-brand {
-  margin-left: 1px;
-  font-family: 'Chango', cursive;
-  color: #efc3e7;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.greeting {
-  color: #efc3e7;
+#ct-log-out {
+  color: #FF0057;
   font-family: 'Cabin', sans-serif;
+  margin: 15px 0px 15px 0px;
+  padding: 15px 5px 15px 15px;
 }
 
-ul {
-  list-style: none;
+#log-out:hover {
+  color: #FFF231;
 }
 
-.cardTitle {
-  text-decoration: underline;
+#ct-log-out:hover {
+    color: #02D9FE;
 }
 
-.container-fluid {
-  background-color: black;
+#greet-user {
+  color: #4FDB4A;
+  font-family: 'Cabin', sans-serif;
+  margin: 15px 0px 15px 0px;
+  padding: 15px;
+}
+
+#ct-greet-user {
+  color: #FF0057;
+  font-family: 'Cabin', sans-serif;
+  margin: 15px 0px 15px 0px;
+  padding: 15px;
+}
+ /*////////////////////
+ /end navigation bar/
+ ////////////////////*/
+
+h4#confirmation {
+  margin-left: 20px;
+  font-size: 14px;
+  color: black;
+}
+
+img#taco-portal {
+  width: 125px;
+  height: auto;
+}
+
+body#create-taco {
+    background-image: url("../../images/background2.png");
+    background-size:  cover;
+
 }
 
 h2 {
@@ -93,7 +198,7 @@ hr {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: gray;
+  background-color: #708090;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;
@@ -134,11 +239,11 @@ input#eggs:focus + .slider {
 }
 
 input#potatoes:checked + .slider {
-  background-color: #635826;
+  background-color: #80461B;
 }
 
 input#potatoes:focus + .slider {
-  box-shadow: 0 0 1px #635826;
+  box-shadow: 0 0 1px #80461B
 }
 .slider#cheese-slider:before {
   position: absolute;
@@ -189,13 +294,144 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 /*End Toggle Switches*/
+
 input#submit-taco {
   font-family: 'Cabin', sans-serif;
   font-size: 18px;
   border-radius: 0px;
-  background-color: white;
+  background-color: #02D9FE;
+  color: black;
+  border-color: black;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-* {
-  box-sizing: border-box;
+input#submit-taco:hover {
+  font-size: 19px;
+  background-color: #29dffe;
+  border-color: black;
 }
+
+
+/*///////////////////////////////////
+/////+++++++++++++++++++++++++//////
+/////+end of create-taco page+//////
+/////+++++++++++++++++++++++++//////
+///////////////////////////////////*/
+
+
+/*///////////////////////////////////
+///^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^///
+///beginning of taco gallery page///
+///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~///
+///////////////////////////////////*/
+
+
+body#taco-gallery {
+  background-image: url("../../images/background1.png");
+  background-size:  cover;
+}
+
+h4#chef-title {
+  font-family: 'Chango', cursive;
+  font-size: 18px;
+  color: black;
+  float: left;
+  margin-top: 15px;
+}
+
+div.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 0px;
+  margin: 15px;
+  width: 30rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+nav#name-bar {
+  background: #FFF231; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#FD5F00, #FFF231); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FD5F00, #FFF231); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FD5F00, #FFF231); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#FD5F00, #FFF231); /* Standard syntax (must be last) */
+  color: #02D9FE;
+  border-radius: 8px 8px 0px 0px;
+  margin-bottom: 0px;
+  border: 1px, solid, #02D9FE;
+}
+
+h4#chef-title {
+  font-family: 'Cabin', sans-serif;
+  font-size: 18px;
+  color: black;
+  float: left;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+div.card-body {
+  padding: 15px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-radius: 0px 0px 8px 8px;
+}
+
+img#gal-thumbnail {
+  width: 125px;
+  height: auto;
+  float: right;
+  padding-top: 3em;
+}
+
+ul.card-text{
+  list-style-type: none;
+  padding: 0;
+}
+
+.card-text li {
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px;
+  color: black;
+  word-wrap: break-word;
+}
+
+a.btn {
+  font-family: 'Chango', cursive;
+  font-size: 10px;
+  background-color: #02D9FE;
+  color: black;
+  border-color: #29dffe;
+  border-radius: 8px;
+}
+
+a.btn:hover {
+  background-color: #29dffe;
+  border-color: #50e5fe;
+  color: black;
+}
+
+#voting li {
+  list-style-type: none;
+  float: right;
+  margin-top: 5px;
+  color: black;
+}
+
+ul#voting {
+  padding: 0;
+  margin: 0;
+}
+
+li.count {
+  margin-right: 3px;
+}
+
+/*///////////////////////////////////
+///^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^///
+///end of taco gallery page///
+///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~///
+///////////////////////////////////*/

@@ -11,52 +11,52 @@
 	<link href="../stylesheets/main.css" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="scripts/app.js"></script>
 
 </head>
+<body id="taco-gallery">
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid" id="navbar">
+				<img id="logo" src="../images/newtaco.png" title="taco-logo" />
+				<a class="navbar-brand" href="/" id="navbar-brand">tacoMyGod</a>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<% if(user != undefined){ %>
+					<ul class="nav navbar-nav navbar-right" id="nav-gal-right">
+						<li id="greet-user">Hello, <%= user.fb.firstName %></li>
+						<li><a href="/" id="log-out">create a taco</a></li>
+						<li><a href="/logout" id="log-out">log out</a></li>
+					</ul>
+					<% }  %>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	</header>
+    <% for(var i=0; i< tacos.length; i++) {  %>
+			<div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 card">
+          <nav class="navbar navbar-default text-center" id="name-bar">
+              <h4 class="card-title" id="chef-title"><b><%= chefs[i].firstName %>'s Taco</b></h4>
+          </nav>
+          <div class="card-body">
+            <img id="gal-thumbnail" src="../images/taco_ex.png" title="taco-example" />
+            <ul class="card-text">
+							<li><b>Tortilla : </b> <%= tacos[i].tortilla %></li>
+							<li><b>Eggs : </b> <%= tacos[i].eggs %></li>
+							<li><b>Meat : </b> <%= tacos[i].meat %></li>
+							<li><b>Salsa : </b> <%= tacos[i].salsa %></li>
+							<li><b>Cheese : </b> <%= tacos[i].cheese %></li>
+							<li><b>Beans : </b> <%= tacos[i].beans %></li>
+							<li><b>Potato : </b> <%= tacos[i].potato %></li>
+						</ul>
+						<ul id="voting">
+	          	<li id="votes">vote(s)</li>
+							<li class="count">0 </li>
+							<a class="buttonPlus btn btn-primary"><b>vote</b></a>
+						</ul>
+          </div>
+        </div>
+    <% } %>
 
-<body>
-  <nav class="navbar navbar-default" id="navbar">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <a href="http://imgur.com/UQNynJ1"><img src="http://i.imgur.com/UQNynJ1.png" title="source: imgur.com" /></a> <a class="navbar-brand" href="/" id="navbar-brand">tacoMyGod</a>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right" id="nav-right">
-        <% if(user != undefined){ %>
-          <li class = 'greeting'><br>
-            <%= user.fb.firstName %> is logged in!
-            <a href="/" id="home">Create a Taco</a>
-            <a href="/logout" id="log-out">log out</a>
-          </li>
-        <% }  %>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-  <div class="container">
-    <ul>
-      <% for(var i=0; i< tacos.length; i++) {  %>
-          <li>
-            <div class="col-md-4 col-md card">
-            <h4>
-              <p class="cardTitle"><%= chefs[i].firstName %>'s Taco </p><br>
-              <p>Tortilla : </p> <%= tacos[i].tortilla %><br>
-              <p>Eggs : </p> <%= tacos[i].eggs %><br>
-              <p>Meat : </p> <%= tacos[i].meat %><br>
-              <p>Salsa : </p> <%= tacos[i].salsa %><br>
-              <p>Cheese : </p> <%= tacos[i].cheese %><br>
-              <p>Beans : </p> <%= tacos[i].beans %><br>
-              <p>Potato : </p> <%= tacos[i].potato %><br>
-            </h4>
-            <p class="count">Total Votes: <%= tacos[i].votes %></p>
-            <a href="/votes/<%=tacos[i]._id %>" class="buttonPlus btn btn-info">VOTE</a>
-
-
-            </div>
-          </li>
-
-      <% } %>
-    </ul>
-  </div>
-  <script src="scripts/app.js"></script>
 </body>
