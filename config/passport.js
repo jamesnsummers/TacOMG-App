@@ -16,7 +16,7 @@ module.exports = function(passport){
   passport.use('facebook', new FacebookStrategy({
     clientID        : process.env.TACOHMYGOD_API_KEY,
     clientSecret    : process.env.TACOHMYGOD_API_SECRET,
-    callbackURL     : 'http://localhost:3000/auth/facebook/callback',
+    callbackURL     : 'https://tacohmygod.herokuapp.com/auth/facebook/callback',
     enableProof     : true,
     profileFields   : ['name', 'emails']
   }, function(access_token, refresh_token, profile, done) {
