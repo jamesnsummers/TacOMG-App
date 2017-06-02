@@ -1,59 +1,42 @@
-//TODO: put in vote controller
+// Connect to models in db
 var db = require('../models');
+// Use passport for auth
 var passport = require('passport');
 require("../config/passport")(passport)
 
+// Create a new vote
 function createVote(request, response) {
-  //response.json({message: 'TACO: ' + request.body.tacoId + ' USER:' + request.user._id});
+  // establish that a vote has a userId and tacoId
   var newVote = {
     _user: request.user,
     _taco: request.params.tacoId
   };
-
+  // create a new vote in the db
   db.Vote.create(newVote, function(error, newVote) {
     if(error) response.json({messsage: 'Could not ceate vote b/c:' + error});
     console.log("\nCreated New Vote\n");
-    // 1. find taco via params
-    // 2. find user via req.user
-    // 3.
+    //find taco via params
     db.Taco.findOne({_id: newVote._taco}, function(err, votedTaco){
       if(err){return console.log(err);}
-
+      //add vote to the db
       votedTaco.votes++;
-
+      //save the vote
       votedTaco.save(function(err, updatedTaco){
 
         if(err){return console.log(err);}
-
+        //find all tacos with votes
         db.Taco.find(function(err, allTacos){
 
           if(err){return console.log(err);}
+          //redirect to the taco gallery with updated votes
           response.redirect('/tacos');
-
-        })
-      })
-
+        });
+      });
     });
-
-
-
   });
-
-
 }
 
-
-
-// how to look for duplicates:
-
-/*
-  1. Find if a vote exists with current user and taco id
-    if it does, deny the user the ability to vote.
-    maybe send a json response of {hasVoted: true}
-
-    if they haven't voted, send a json response of {hasVoted: false}
-*/
-
+// export function for use elsewhere in the project code
 module.exports = {
   createVote : createVote
 }

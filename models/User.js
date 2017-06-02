@@ -1,5 +1,7 @@
+// connect to mongoose db
 var mongoose = require('mongoose');
 
+//set up User model
 var UserSchema = mongoose.Schema({
   fb: {
     id: String,
@@ -10,4 +12,5 @@ var UserSchema = mongoose.Schema({
   }
 });
 
+// export model for use elsewhere in the project code
 module.exports = mongoose.model('User', UserSchema);

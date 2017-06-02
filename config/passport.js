@@ -1,3 +1,4 @@
+// main facebook auth code
 var User = require('../models/User');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
@@ -42,7 +43,6 @@ module.exports = function(passport){
           newUser.save(function(err) {
             if (err)
               throw err;
-
             return done(null, newUser);
           });
         }

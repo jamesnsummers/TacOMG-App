@@ -1,49 +1,24 @@
+// Connect to models in db
 var db = require('../models');
+// Use passport for auth
 var passport = require('passport');
 require("../config/passport")(passport);
 
-// GET all tacos
+// GET retrieve all tacos
 function getAllTacos(request, response) {
   db.Taco.find().populate('chef')
   .exec(function(error, allTacos) {
     if(error) response.json({message: 'Could not find any tacos'});
 
     // require any and all passport junk to be able to pass in req.user into your ejs json object
-    console.log (allTacos);
     var chefs = allTacos.map(function (taco){
       return {firstName: taco.chef.fb.firstName, id: taco.chef._id};
     });
-
-    // // stop user from voting for single taco more than once
-    // allTacos.forEach(function(taco, user){
-    //   tacoId = taco._id;
-    //   userId = user._id
-    //   db.Vote.findOne({tacoId, userId}, function(err, succ){
-    //     if (succ) {taco.voted === true;}
-    //     else {taco.voted === false;}
-    //   });
-    // });
-
-    // votes = allTacos.map(function(taco){
-    //   vote = taco.getVotes();
-    //   console.log('\n Vote: '+ vote + '\n');
-    //   return vote;
-    // });
-
-    // tally the votes for all tacos
-    // allTacos = allTacos.map(function(taco){
-    //   db.Vote.findOne({taco: request.body.tacoId}, function(err, succ){
-    //     taco.voteCount = succ.length;
-    //     console.log(succ);
-    //
-    //   });
-    //     return taco;
-    // });
     response.render('partials/tacos/tacos', {chefs: chefs, tacos: allTacos, user: request.user});
   });
 }
 
-// POST a new taco
+// POST create a new taco
 function createTaco(request, response) {
   var taco = new db.Taco();
 
@@ -63,7 +38,7 @@ function createTaco(request, response) {
   });
 }
 
-// GET single taco
+// GET retrieve a single taco
 function getTaco(request, response) {
   var id = request.params.id;
 
@@ -74,7 +49,7 @@ function getTaco(request, response) {
   });
 }
 
-//UPDATE taco
+//UPDATE a single taco -- still working on getting this working on front end
 function updateTaco(request, response) {
   var id = request.params.id;
 
@@ -98,7 +73,7 @@ function updateTaco(request, response) {
   });
 }
 
-//DELETE a taco
+//DELETE a taco -- still working on getting this working on front end
 function removeTaco(request, response) {
   var id = request.params.id;
 
@@ -109,19 +84,7 @@ function removeTaco(request, response) {
   });
 }
 
-// // delete book
-// app.delete('/api/books/:id', function (req, res) {
-//   // get book id from url params (`req.params`)
-//   console.log('books deleted: ', req.params);
-//   var bookId = req.params.id;
-//   // find the index of the book we want to remove
-//   db.Book.findOneAndRemove({ _id: bookId })
-//     .populate('author')
-//     .exec(function (err, deletedBook) {
-//       res.json(deletedBook);
-//   });
-// });
-
+// export all functions for use elsewhere in the project code
 module.exports = {
   getAllTacos: getAllTacos,
   createTaco: createTaco,

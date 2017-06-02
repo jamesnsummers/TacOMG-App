@@ -1,8 +1,12 @@
+// connect to mongoose db
 var mongoose = require('mongoose');
+// set up variables for schema
 var Schema = mongoose.Schema;
+// connecting to user and vote models
 var User = require('./User');
 var Vote = require('./Vote');
 
+//set up Taco model
 var TacoSchema = new Schema({
   chef: {
     type: Schema.Types.ObjectId,
@@ -17,18 +21,5 @@ var TacoSchema = new Schema({
   potato: Boolean,
   votes: {type:Number, default: 0}
 });
-
-// TacoSchema.methods.getVotes = function(){
-//   var total;
-//   var taco = this;
-//   Vote.find({_taco: this._id}, function(err, succ){
-//     if(err){return console.log(err);}
-//     taco.votes = succ.length;
-//     taco.save(function(err, succ){
-//       console.log(succ);
-//       return succ;
-//     });
-//   });
-// }
-
+// export model for use elsewhere in the project code
 module.exports = mongoose.model('Taco', TacoSchema);

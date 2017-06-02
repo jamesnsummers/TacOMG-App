@@ -1,7 +1,10 @@
+// JS that is used in the .ejs files
+// sets up the drop down use after the page loads
 $(document).ready(function() {
   $('.dropdown-toggle').dropdown()
 });
 
+// script for vote submission
 var counter = 0;
 console.log("I am listening");
 $(".card").on('click', '.buttonPlus', function(e){

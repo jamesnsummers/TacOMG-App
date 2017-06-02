@@ -1,18 +1,17 @@
+<!-- HTML/.ejs for the taco gallery -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>TACOHMYGOD</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/main.css" /></head>
-	<link href="https://fonts.googleapis.com/css?family=Istok+Web|News+Cycle" rel="stylesheet">
+	<title>tacOhMyGod</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+</head>
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Chango|Chelsea+Market|Knewave|Luckiest+Guy|Monoton|Press+Start+2P" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="../stylesheets/main.css" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
-
-
 </head>
 <body id="taco-gallery">
 	<header>
@@ -21,7 +20,6 @@
 				<img id="logo" src="../images/newtaco.png" title="taco-logo" />
 				<a class="navbar-brand" href="/" id="navbar-brand">tacOhMyGod</a>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
 					<ul class="nav navbar-nav navbar-right" id="nav-gal-right">
             <% if(user != undefined){ %>
             <li id="greet-user">Hello, <%= user.fb.firstName %></li>
@@ -29,9 +27,8 @@
 						<li><a href="/logout" id="log-out">log out</a></li>
             <% }  %>
           </ul>
-
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
+				</div>
+			</div>
 		</nav>
 	</header>
     <% for(var i=0; i< tacos.length; i++) {  %>
@@ -39,7 +36,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4 card">
           <nav class="navbar navbar-default text-center" id="name-bar">
-              <h4 class="card-title" id="chef-title"><b><%= chefs[i].firstName %>'s Taco</b></h4>
+            <h4 class="card-title" id="chef-title"><b><%= chefs[i].firstName %>'s Taco</b></h4>
           </nav>
           <div class="card-body">
             <img id="gal-thumbnail" src="../images/taco_ex.png" title="taco-example" />

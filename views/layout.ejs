@@ -1,11 +1,11 @@
+<!-- HTML/.ejs for main layout of pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>TACOHMYGOD</title>
-
-	<link rel="stylesheet" type="text/css" href="stylesheets/main.css" /></head>
-	<link href="https://fonts.googleapis.com/css?family=Istok+Web|News+Cycle" rel="stylesheet">
+	<title>tacOhMyGod</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+</head>
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Chango|Chelsea+Market|Knewave|Luckiest+Guy|Monoton|Press+Start+2P" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,15 +15,14 @@
 		<meta charset="utf-8">
 </head>
 <body>
-
 		<% if (user) { %>
 			<% if(user != undefined){ %>
-				<body id="create-taco"
 				<% }  %>
+				<body id="create-taco">
 			<%- include ./partials/forms/createTaco.ejs %>
+				</body>
 		<% } else { %>
 		<body id="landing-pg">
-
 			<div class="container text-center">
       	<div class="row">
 					<img id="landing-logo" src="../images/newtaco.png" title="taco-logo" />
@@ -32,10 +31,7 @@
 					<a class ="btn" id="fb-login" href="/auth/facebook"><i class="fa fa-facebook" aria-hidden="true"></i> | Login with Facebook</a>
       	</div>
     	</div>
-
 		</body>
 		<% } %>
-
-
 </body>
 </html>

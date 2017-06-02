@@ -1,5 +1,7 @@
+// SEED DATA
+// connect to mongoose db
 var db = require('./models');
-
+//Seeded users
 var userList = [
   {
     fb: {
@@ -38,32 +40,29 @@ var userList = [
     }
   }
 ];
-
+//Seeded tacos
 var tacoList = [
   {
-
     tortilla: 'Flour',
     eggs: true,
     meat: 'Chorizo',
     salsa: true,
     cheese: true,
     beans: 'Black',
-    potato: false,
+    potato: '',
     votes: 0
   },
   {
-
     tortilla: 'Corn',
     eggs: true,
     meat: 'Bacon',
     salsa: true,
     cheese: true,
     beans: '',
-    potato: false,
+    potato: '',
     votes: 0
   },
   {
-
     tortilla: 'Flour',
     eggs: true,
     meat: 'Bacon',
@@ -72,32 +71,30 @@ var tacoList = [
     beans: 'Black',
     potato: true,
     votes: 0
-
   },
   {
-
     tortilla: 'Wheat',
-    eggs: false,
+    eggs: '',
     meat: 'Soyrizo',
     salsa: true,
-    cheese: false,
+    cheese: '',
     beans: 'Refried',
     potato: true,
     votes: 0
   }
 ];
 
-
+//functions to populate db with seed data
+//remove all users from db
 db.User.remove({}, function(err, removedEverything){
   if(err){return console.log("ERR: ", err);}
-
+  //create a user in the db
   db.User.create(userList, function(err, allUsers){
     if(err){return console.log("ERR: ", err);}
-    //console.log(allUsers);
-
+    //remove all tacos from db
     db.Taco.remove({}, function(err, removedEverything){
       if(err){return console.log("ERR: ", err);}
-
+      //create each taco in the db and assign chefs to the tacos
       db.Taco.create(tacoList, function(err, allTacos){
         if(err){return console.log("ERR: ", err);}
         allTacos[0].chef = allUsers[0];
@@ -108,7 +105,7 @@ db.User.remove({}, function(err, removedEverything){
         allTacos[2].save();
         allTacos[3].chef = allUsers[3];
         allTacos[3].save();
-
+          //
           allUsers.forEach(function (user){
             db.Vote.remove(function(err, succ){
 

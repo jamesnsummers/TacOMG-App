@@ -1,5 +1,7 @@
+// Connect to models in db
 var db = require('../models');
 
+// Facebook auth functions
 function login(request, response){
   var loginStrategy = passport.authenticate('facebook');
   return loginStrategy(request, response)
@@ -10,8 +12,6 @@ function getCallback(request, response){
     successRedirect : '/',
     failureRedirect : '/'
   });
-
-  // var callback(request, response);
 }
 
 function logout(request, response) {
@@ -19,7 +19,7 @@ function logout(request, response) {
   response.redirect('/');
 }
 
-// GET
+// GET retrieve all users in json -- still need to restrict access to this to admins
 function getAllUsers(request, response) {
   db.User.find(function(error, allUsers) {
     if(error) response.json({message: 'Could not find any users'});
@@ -27,7 +27,7 @@ function getAllUsers(request, response) {
   });
 }
 
-// POST
+// POST add a new user to db
 function createUser(request, response) {
   var user = new db.User();
 
@@ -44,7 +44,7 @@ function createUser(request, response) {
   });
 }
 
-// GET
+// GET retrieve a single user
 function getUser(request, response) {
   var id = request.params.id;
 
@@ -55,23 +55,7 @@ function getUser(request, response) {
   });
 }
 
-// //UPDATE
-// function voteTaco(request, response) {
-//   var id = request.params.id;
-//
-//   db.Taco.findById({_id: id}, function(error, taco) {
-//     if(error) response.json({message: 'Could not find taco b/c:' + error});
-//
-//     if(request.body.id) taco.id = request.body.id;
-//
-//     taco.save(function(error) {
-//       if(error) response.json({messsage: 'Could not update taco b/c:' + error});
-//
-//       response.json({message: 'Taco successfully updated'});
-//     });
-//   });
-// }
-
+//DELETE remove a user from the db
 function removeUser(request, response) {
   var id = request.params.id;
 
@@ -82,6 +66,7 @@ function removeUser(request, response) {
   });
 }
 
+// export all functions for use elsewhere in the project code
 module.exports = {
   getAllUsers: getAllUsers,
   createUser: createUser,

@@ -3,10 +3,10 @@ var express = require('express'),
     bodyParser = require('body-parser'), //parses information from POST
     methodOverride = require('method-override'); //used to manipulate POST
 
+// connect to controllers
 var tacosController = require('../controllers/tacos');
 var usersController = require('../controllers/users');
 var votesController = require('../controllers/votes');
-
 
 var isAuthenticated = function (req, res, next) {
   // if user is authenticated in the session, call the next() to call the next request handler
@@ -18,52 +18,47 @@ var isAuthenticated = function (req, res, next) {
   res.redirect('/');
 }
 
-router.route('/tacos')
+// ROUTES //
 
+// Multiple Tacos route
+router.route('/tacos')
   //GET all tacos
   .get(tacosController.getAllTacos)
-
   //POST a new blob
   .post(tacosController.createTaco)
 
+// Single Taco route
 router.route('/tacos/:id')
-
   // GET return specific taco
   .get(tacosController.getTaco)
-
-  // // PATCH update existing taco
-  // .patch(tacosController.updateTaco)
-
+  // PATCH update existing taco -- still working on getting this working on the front end
+  .patch(tacosController.updateTaco)
   // DELETE remove specific taco from DB
   .delete(tacosController.removeTaco);
 
+// Multiple Users route
 router.route('/users')
-
   //GET all users
   .get(usersController.getAllUsers)
-
   //POST a new user
   .post(usersController.createUser);
 
-
+// Single User route
 router.route('/users/:id')
-
   // GET return specific user
   .get(usersController.getUser)
-
   // DELETE remove specific user from DB
   .delete(usersController.removeUser);
 
-  router.route('/votes/:tacoId')
-
+// Votes route
+router.route('/votes/:tacoId')
+  //GET retrieves a vote after its made
   .get(votesController.createVote);
 
+//Facebook Auth routes
+router.route('/auth/facebook').get(usersController.login);
+router.route('/auth/facebook/callback').get(usersController.getCallback);
+router.route('/logout').get(usersController.logout);
 
-
-  router.route('/auth/facebook').get(usersController.login);
-
-  router.route('/auth/facebook/callback').get(usersController.getCallback);
-
-  router.route('/logout').get(usersController.logout);
-
+//Export router to allow use in other files within project
 module.exports = router;
