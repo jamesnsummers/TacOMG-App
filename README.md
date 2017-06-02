@@ -1,8 +1,8 @@
-# Taco App
+# TacOMG App
 
-*Taco App allows users to create their ideal taco and populate a gallery of tacos. In this gallery, they can vote for their favorite tacos and see how many votes each taco has.*
+*The TacOMG app allows users to create their ideal taco and populate a gallery of tacos. In this gallery, they can vote for their favorite tacos and see how many votes each taco has.*
 
-[Tacohmygod hosted on Heroku](https://tacohmygod.herokuapp.com/)
+[TacOMG hosted on Heroku](https://tacohmygod.herokuapp.com/)
 
 ## Technologies Used
 
@@ -11,13 +11,6 @@
 
 
 ## Existing Features
-
-*TBD - What features does your app have? (bullet points)*
-
-
-
-
-## Planned Features
 
 *-Land on homepage<br>
 -Create account using fb<br>
@@ -31,8 +24,19 @@
 
 ---
 
+
+## Planned Features
+*-Update or edit the taco that you've created<br>
+-Delete a taco you've created<br>
+-Create a user signup/login form using local auth<br>
+-Make the top 3 voted tacos float to top of gallery<br>
+-Allow user to sort taco gallery by name, creation date, most-voted*
+
+---
+
+
 ##### Screenshots of Wireframes
-![landing page](/images/taco_home2.png)
-![taco 1](/images/taco_create_2_720.png)
-![taco gallery](/images/tacogallery_720.png)
-![taco 1](/images/taco-1.jpg)
+![landing page](/public/images/taco_home2.png)
+![taco 1](/public/images/taco_create_2_720.png)
+![taco gallery](/public/images/tacogallery_720.png)
+![taco 1](/public/images/taco-1.jpg)
