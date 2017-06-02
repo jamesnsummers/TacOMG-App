@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 var counter = 0;
 console.log("I am listening");
-$(".card").one('click', '.buttonPlus', function(e){
+$(".card").on('click', '.buttonPlus', function(e){
   var tacoId = $(this).data('taco_id');
   var count = $(this).prev().text();
   $(this).prev().text(++count);
