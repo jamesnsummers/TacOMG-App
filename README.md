@@ -2,11 +2,12 @@
 
 *The TacOMG app allows users to create their ideal taco and populate a gallery of tacos. In this gallery, they can vote for their favorite tacos and see how many votes each taco has.*
 
-[TacOMG hosted on Heroku](https://tacohmygod.herokuapp.com/)
+[TacOMG hosted on Heroku](https://tacomg.herokuapp.com/)
+[TacOMG project tracking on Trello](https://trello.com/b/rynD9G9w/project-01-group-3-sprint-flow)
 
 ## Technologies Used
 
-*HTML, CSS, Bootstrap, Javascript, JQuery, AJAX, Express, MongooseDB, .ejs, Git, Github, Heroku, oauth, node.js *
+*HTML, CSS, Bootstrap, Javascript, JQuery, Express, MongooseDB, .ejs, Git, Github, Heroku, oauth, node.js *
 
 
 
