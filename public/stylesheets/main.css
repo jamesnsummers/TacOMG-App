@@ -4,7 +4,7 @@ body {
 
 body#landing-pg {
   background-image: url("../../images/background3.png");
-  background-size: cover;
+  background-attachment: fixed;
 }
 
 img#landing-logo {
