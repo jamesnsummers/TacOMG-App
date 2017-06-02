@@ -25,6 +25,7 @@
         <% if(user != undefined){ %>
           <li class = 'greeting'><br>
             <%= user.fb.firstName %> is logged in!
+            <a href="/" id="home">Create a Taco</a>
             <a href="/logout" id="log-out">log out</a>
           </li>
         <% }  %>
@@ -38,7 +39,6 @@
           <li>
             <div class="col-md-4 col-md card">
             <h4>
-              <!-- <em><%= chefs[i].id %></em> -->
               <p class="cardTitle"><%= chefs[i].firstName %>'s Taco </p><br>
               <p>Tortilla : </p> <%= tacos[i].tortilla %><br>
               <p>Eggs : </p> <%= tacos[i].eggs %><br>
@@ -49,8 +49,8 @@
               <p>Potato : </p> <%= tacos[i].potato %><br>
             </h4>
             <p class="count">Total Votes: <%= tacos[i].votes %></p>
-            <a href="/votes/<%=tacos[i]._id %>" class="buttonPlus btn btn-info">+</a>
-            <!-- <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button> -->
+            <a href="/votes/<%=tacos[i]._id %>" class="buttonPlus btn btn-info">VOTE</a>
+
 
             </div>
           </li>

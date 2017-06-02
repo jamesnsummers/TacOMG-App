@@ -34,6 +34,7 @@
 					<% if(user != undefined){ %>
 						<li class = 'greeting'><br>
 							<%= user.fb.firstName %> is logged in!
+							<a href="/tacos" id="tacoGallery">Taco Gallery</a>
 							<a href="/logout" id="log-out">log out</a>
 						</li>
 					<% }  %>
@@ -60,7 +61,6 @@
 			<a class ="btn" href="/auth/facebook">Login with Facebook</a>
 		<% } %>
 
-		<!-- <a class ="btn" href="#">Signup</a> -->
 	</div>
 
 	<hr>

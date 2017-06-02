@@ -31,8 +31,8 @@ router.route('/tacos/:id')
   // GET return specific taco
   .get(tacosController.getTaco)
 
-  // PATCH update existing taco
-  .patch(tacosController.updateTaco)
+  // // PATCH update existing taco
+  // .patch(tacosController.updateTaco)
 
   // DELETE remove specific taco from DB
   .delete(tacosController.removeTaco);
@@ -50,9 +50,6 @@ router.route('/users/:id')
 
   // GET return specific user
   .get(usersController.getUser)
-
-  // // PATCH update(vote) existing user
-  // .patch(usersController.voteUser)
 
   // DELETE remove specific user from DB
   .delete(usersController.removeUser);

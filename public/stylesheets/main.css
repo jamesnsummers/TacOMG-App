@@ -76,7 +76,15 @@ hr {
   height: 34px;
 }
 
-.switch input {display:none;}
+.switch input {
+  display:none;
+}
+
+#dropdown {
+  background-color: gray;
+  font-family: 'Cabin', sans-serif;
+  border: none;
+}
 
 .slider {
   position: absolute;
