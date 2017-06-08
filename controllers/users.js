@@ -38,6 +38,7 @@ function createUser(request, response) {
   user.email = request.body.email;
 
   user.save(function(error) {
+    // TODO: Consider adding a flash message so user can understand why they could't log in and allow them to try again.
     if(error) response.json({messsage: 'Could not ceate user b/c:' + error});
 
     response.redirect('/users');

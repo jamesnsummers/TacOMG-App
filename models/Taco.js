@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 // connecting to user and vote models
 var User = require('./User');
+// TODO: We won't need to require this in it's current form.
 var Vote = require('./Vote');
 
 //set up Taco model

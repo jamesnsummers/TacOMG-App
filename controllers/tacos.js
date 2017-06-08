@@ -52,7 +52,7 @@ function getTaco(request, response) {
 //UPDATE a single taco -- still working on getting this working on front end
 function updateTaco(request, response) {
   var id = request.params.id;
-
+  // TODO: Look up the findOneAndUpdate DB method, it will make this much smaller
   db.Taco.findById({_id: id}, function(error, taco) {
     if(error) response.json({message: 'Could not find taco b/c:' + error});
 
