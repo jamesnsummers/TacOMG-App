@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 var User = require('./User');
 var Taco = require('./Taco');
 
+// TODO: We WILL get this to work! 
 //set up Vote model -- requires userId and tacoId
 var VoteSchema = new Schema({
   _user: {

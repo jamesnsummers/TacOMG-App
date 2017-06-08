@@ -9,6 +9,7 @@ var mongoose       = require('mongoose');
 var cookieParser   = require("cookie-parser");
 var passport       = require('passport');
 
+// TODO: eventually, you will not need to require this db as you won't call the db at all in your server.js
 // connect to db models
 var db = require('./models');
 // connect to routes
@@ -29,6 +30,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 
+// TODO: Do we need to see a list of all users? We shouldn't expose this data to users
 //GET all users in json -- need to restrict access
 app.get('/api/users', function(req, res) {
 // find all users in db
@@ -37,6 +39,7 @@ app.get('/api/users', function(req, res) {
     });
 });
 
+// TODO: Consider moving this endpoint to the taco controller
 //GET all tacos in json
 app.get('/api/tacos', function(req, res) {
 // find all tacos in db
@@ -50,11 +53,15 @@ app.get('/', function(req, res){
   res.render('layout', {user: req.user});
 });
 
+// TODO: Move this statement higher up the file but below the passport requirement.
 // Setting up the Passport Strategies
 require("./config/passport")(passport)
 
+// TODO: These are in routes.js, remove them.
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email'} ));
 
+
+// TODO: Consider adding flash messaging to tell the user whey they failed at logging in.
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', {
     successRedirect: '/',
@@ -62,6 +69,7 @@ app.get('/auth/facebook/callback',
   })
 );
 
+// TODO: Consider adding flash messaging to say goodbye to the user.
 app.get("/logout", function(req, res){
   req.logout();
   res.redirect("/")

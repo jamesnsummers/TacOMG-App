@@ -1,5 +1,7 @@
 // JS that is used in the .ejs files
 // sets up the drop down use after the page loads
+
+//TODO: Move your click listener into the $document.ready function
 $(document).ready(function() {
   $('.dropdown-toggle').dropdown()
 });

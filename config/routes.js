@@ -1,3 +1,4 @@
+// TODO: convention tip: If you are going to comma chain your requirements, make sure to do so within your entire app, not just in routes.js
 var express = require('express'),
     router = express.Router(),
     bodyParser = require('body-parser'), //parses information from POST
