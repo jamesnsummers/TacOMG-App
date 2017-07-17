@@ -1,6 +1,6 @@
 // connect to mongoose db
 var mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tacohmygod");
+mongoose.connect("mongodb://jamesnsummers:password37@ds049171.mlab.com:49171/tacomg");
 
 // allows access to all models
 module.exports.Taco = require("./Taco.js");

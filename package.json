@@ -1,5 +1,6 @@
 {
   "name": "project-01",
+  "contributors": "James Summers, Jared Watson, Benjamin Tovar",
   "version": "1.0.0",
   "description": "Taco App",
   "main": "server.js",
